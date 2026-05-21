@@ -1,0 +1,398 @@
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+ 
+    /* ── Section ── */
+    .featured-section {
+      padding: 80px 40px 100px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+ 
+    /* ── Header ── */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1.5px solid #e4e0f8;
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #6c63ff;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .section-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #6c63ff;
+    }
+ 
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #1a1a2e;
+    }
+    .section-header h2 span {
+      background: linear-gradient(135deg, #6c63ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-header p {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: #7a7a9a;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+ 
+    /* ── Grid ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+ 
+    /* ── Card ── */
+    .card {
+      border-radius: 20px;
+      padding: 36px 36px 32px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+    }
+ 
+    /* Card themes */
+    .card-novatech  { background: linear-gradient(135deg, #ede9ff 0%, #d4ccff 100%); }
+    .card-brand     { background: linear-gradient(135deg, #ffe4ef 0%, #ffc8e0 100%); }
+    .card-ecommerce { background: linear-gradient(135deg, #e0f0ff 0%, #c8e4ff 100%); }
+    .card-fintech   { background: linear-gradient(135deg, #d4f5e5 0%, #b8edcf 100%); }
+ 
+    /* ── Card icon ── */
+    .card-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+    .card-icon svg { width: 24px; height: 24px; fill: #fff; }
+ 
+    .card-novatech  .card-icon { background: linear-gradient(135deg, #6c63ff, #8b5cf6); }
+    .card-brand     .card-icon { background: linear-gradient(135deg, #f43f91, #e91e8c); }
+    .card-ecommerce .card-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    .card-fintech   .card-icon { background: linear-gradient(135deg, #10b981, #059669); }
+ 
+    /* ── Card text ── */
+    .card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: #444466;
+      line-height: 1.6;
+      max-width: 220px;
+    }
+ 
+    /* ── View Case Study link ── */
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 20px;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .card-link:hover { gap: 10px; }
+    .card-link svg { width: 16px; height: 16px; }
+ 
+    .card-novatech  .card-link { color: #6c63ff; }
+    .card-brand     .card-link { color: #e91e8c; }
+    .card-ecommerce .card-link { color: #2563eb; }
+    .card-fintech   .card-link { color: #059669; }
+ 
+    /* ── Decorative mockup ── */
+    .card-visual {
+      position: absolute;
+      right: 0; bottom: 0;
+      width: 52%;
+      height: 100%;
+      pointer-events: none;
+    }
+ 
+    /* NovaTech chart mockup */
+    .novatech-mockup {
+      position: absolute;
+      right: -10px; bottom: -10px;
+      width: 290px; height: 200px;
+    }
+    .mockup-screen {
+      background: rgba(255,255,255,0.85);
+      border-radius: 16px 16px 0 0;
+      width: 100%; height: 100%;
+      padding: 14px 16px 0;
+      box-shadow: 0 -8px 30px rgba(108,99,255,0.15);
+      backdrop-filter: blur(4px);
+    }
+    .mockup-line { height: 6px; border-radius: 4px; background: #e8e5ff; margin-bottom: 8px; }
+    .mockup-line.w60 { width: 60%; }
+    .mockup-line.w80 { width: 80%; }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 80px;
+      margin-top: 12px;
+    }
+    .bar {
+      flex: 1;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(180deg, #8b5cf6, #6c63ff);
+      opacity: 0.7;
+    }
+    .bar:nth-child(1) { height: 40%; }
+    .bar:nth-child(2) { height: 65%; }
+    .bar:nth-child(3) { height: 55%; }
+    .bar:nth-child(4) { height: 80%; }
+    .bar:nth-child(5) { height: 70%; }
+    .bar:nth-child(6) { height: 90%; }
+    .trend-badge {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: #6c63ff;
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+ 
+    /* BrandIdentity mockup */
+    .brand-mockup {
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+    }
+    .brand-card {
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .brand-card-main {
+      background: #2d1b5e;
+      width: 130px;
+      padding: 20px;
+    }
+    .brand-logo-big {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .brand-sub { font-size: 0.65rem; color: #a78bfa; letter-spacing: 0.08em; }
+    .brand-card-type {
+      background: #fff;
+      width: 95px;
+      padding: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .type-label { font-size: 0.55rem; color: #999; letter-spacing: 0.1em; text-transform: uppercase; }
+    .type-letters { font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1a1a2e; }
+    .brand-card-color {
+      background: linear-gradient(135deg, #f43f91, #e91e8c);
+      width: 95px;
+      padding: 12px;
+    }
+    .b-letter {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .color-swatches {
+      display: flex;
+      gap: 4px;
+    }
+    .swatch {
+      width: 14px; height: 14px; border-radius: 4px;
+    }
+ 
+    /* E-Commerce mockup */
+    .ecom-mockup {
+      position: absolute;
+      right: -10px; bottom: -10px;
+      width: 280px;
+    }
+    .ecom-screen {
+      background: rgba(255,255,255,0.9);
+      border-radius: 14px 14px 0 0;
+      padding: 14px;
+      box-shadow: 0 -8px 30px rgba(59,130,246,0.15);
+    }
+    .ecom-header-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .ecom-dots { display: flex; gap: 4px; }
+    .ecom-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .ecom-search-bar {
+      flex: 1;
+      height: 20px;
+      background: #f0f0f0;
+      border-radius: 6px;
+    }
+    .ecom-cart-icon {
+      width: 28px; height: 28px;
+      background: #2563eb;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      margin-left: auto;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .product-item {
+      background: #f8f8ff;
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+    }
+    .product-img {
+      width: 100%;
+      height: 50px;
+      border-radius: 6px;
+      background: #e8edf5;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .product-price {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+ 
+    /* FinTech mockup */
+    .fintech-mockup {
+      position: absolute;
+      right: -10px; bottom: -10px;
+      width: 310px;
+    }
+    .fintech-screen {
+      background: #0f1729;
+      border-radius: 14px 14px 0 0;
+      padding: 16px;
+      box-shadow: 0 -8px 30px rgba(16,185,129,0.2);
+    }
+    .fintech-top-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .fintech-stat {
+      flex: 1;
+    }
+    .fintech-label { font-size: 0.55rem; color: #6b7280; letter-spacing: 0.08em; text-transform: uppercase; }
+    .fintech-value {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .fintech-badge {
+      font-size: 0.55rem;
+      color: #10b981;
+      font-weight: 600;
+    }
+    .fintech-chart {
+      height: 50px;
+      position: relative;
+      margin-top: 4px;
+    }
+    .fintech-chart svg { width: 100%; height: 100%; }
+    .donut-wrap {
+      position: absolute;
+      right: 0; bottom: 0;
+      width: 50px; height: 50px;
+    }
+ 
+    /* ── Footer CTA ── */
+    .footer-cta {
+      text-align: center;
+      margin-top: 56px;
+    }
+    .btn-view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border: 2px solid #d0cdf0;
+      border-radius: 50px;
+      background: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-view-all:hover {
+      background: #6c63ff;
+      border-color: #6c63ff;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(108,99,255,0.35);
+    }
+    .btn-view-all svg { width: 18px; height: 18px; }
+ 
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .card { min-height: 200px; }
+      .novatech-mockup, .brand-mockup, .ecom-mockup, .fintech-mockup { display: none; }
+      .card p { max-width: 100%; }
+    }
