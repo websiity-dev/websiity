@@ -1,5 +1,6 @@
-::-webkit-scrollbar{
-    display: none;
+:root{
+    --primary-blue:#2563eb;
+    --accent-cyan:#06b6d4;
 }
 *{
     margin: 0;
@@ -7,3 +8,12 @@
     box-sizing: border-box;
     /* font-family: 'Poppins', sans-serif; */
 }
+::-webkit-scrollbar{
+    display: none;
+}
+ .highlight {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
