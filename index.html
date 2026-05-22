@@ -992,7 +992,7 @@
     </div>
   </footer>
   <!-- Toast -->
-  <div id="toast"
+  <!-- <div id="toast"
     class="fixed left-1/2 -translate-x-1/2 bg-white px-6 py-4 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] flex items-center gap-4 z-[9999] border-l-4 border-rose-500 pointer-events-none"
     style="bottom:-100px;">
     <svg class="w-6 h-6 text-rose-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1005,7 +1005,7 @@
       <strong class="block text-slate-900 text-sm mb-0.5">Oops!</strong>
       <p class="text-slate-500 text-xs m-0">Sry to say this, cannot reach right now.</p>
     </div>
-  </div>
+  </div> -->
   <script>
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -1099,18 +1099,18 @@
       obs.observe(el);
     });
     // Toast
-    function showToast(e, card) {
-      e.preventDefault();
-      if (card) {
-        card.classList.remove('shake');
-        void card.offsetWidth;
-        card.classList.add('shake');
-        setTimeout(() => card.classList.remove('shake'), 500);
-      }
-      const t = document.getElementById('toast');
-      t.style.bottom = '30px';
-      setTimeout(() => t.style.bottom = '-100px', 3000);
-    }
+    // function showToast(e, card) {
+    //   e.preventDefault();
+    //   if (card) {
+    //     card.classList.remove('shake');
+    //     void card.offsetWidth;
+    //     card.classList.add('shake');
+    //     setTimeout(() => card.classList.remove('shake'), 500);
+    //   }
+    //   const t = document.getElementById('toast');
+    //   t.style.bottom = '30px';
+    //   setTimeout(() => t.style.bottom = '-100px', 3000);
+    // }
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
