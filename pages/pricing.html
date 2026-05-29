@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Websiity — Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+:root {
+  --cream: #faf8f4;
+  --white: #ffffff;
+  --ink: #111827;
+  --ink-light: #374151;
+  --ink-muted: #9ca3af;
+  --border: #e5e7eb;
+  --accent: #e8622a;
+  --accent-light: #fff1eb;
+  --accent-hover: #d4521c;
+  --green: #16a34a;
+  --green-light: #dcfce7;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --shadow-sm: 0 1px 8px rgba(17,24,39,0.06);
+  --shadow-lg: 0 20px 56px rgba(17,24,39,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 6%;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 66px;
+  box-shadow: var(--shadow-sm);
+}
+.logo { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.6px; color: var(--ink); }
+.logo span { color: var(--accent); }
+nav { display:flex; align-items:center; }
+nav a { color: var(--ink-light); text-decoration: none; font-size: 0.875rem; font-weight: 500; margin-left: 1.8rem; letter-spacing: 0.01em; transition: color .2s; }
+nav a:hover { color: var(--accent); }
+.btn-nav { background: var(--accent); color: #fff !important; padding: .48rem 1.15rem; border-radius: 7px; font-weight: 600 !important; display: inline-flex; align-items: center; gap: 6px; }
+.btn-nav:hover { background: var(--accent-hover) !important; }
+.hero { text-align: center; padding: 76px 6% 56px; animation: fadeUp .55s ease both; }
+.hero-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); font-size: .73rem; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase; padding: .32rem 1rem; border-radius: 50px; margin-bottom: 1.1rem; }
+.hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.1rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.13; margin-bottom: .9rem; letter-spacing: -0.035em; }
+.hero p { color: var(--ink-light); font-size: 1rem; font-weight: 400; max-width: 490px; margin: 0 auto 1.5rem; }
+.note-pill { display: inline-flex; align-items: center; gap: .5rem; background: var(--white); border: 1px solid var(--border); border-radius: 50px; padding: .35rem 1rem; font-size: .8rem; color: var(--ink-muted); }
+.live-dot { width:7px; height:7px; background:var(--green); border-radius:50%; flex-shrink:0; }
+.plans-wrap { max-width: 1080px; margin: 0 auto 72px; padding: 0 6%; animation: fadeUp .55s ease both; animation-delay:.1s; }
+.section-title { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.section-title span { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .78rem; color: var(--ink-muted); font-weight: 500; letter-spacing: 0; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.plan-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 18px; padding: 32px 26px 28px; position: relative; transition: transform .28s ease, box-shadow .28s ease, border-color .28s; display: flex; flex-direction: column; overflow: hidden; }
+.plan-card::after { content: ''; position: absolute; top:0; left:0; right:0; height:3px; background: var(--plan-color); border-radius: 18px 18px 0 0; opacity: 0; transition: opacity .28s; }
+.plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.plan-card:hover::after { opacity:1; }
+.plan-card.featured { border-color: var(--plan-color); box-shadow: 0 0 0 1px var(--plan-color), var(--shadow-sm); }
+.plan-card.featured::after { opacity:1; }
+.plan-badge { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--plan-color); color: #fff; font-size: .65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 14px; border-radius: 0 0 10px 10px; white-space: nowrap; }
+.plan-icon-wrap { width: 48px; height: 48px; border-radius: 13px; background: var(--plan-bg); display: flex; align-items:center; justify-content:center; margin-bottom: 18px; }
+.plan-icon-wrap i { font-size: 1.35rem; color: var(--plan-color); }
+.plan-name { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 3px; letter-spacing: -0.02em; color: var(--ink); }
+.plan-sub { font-size: .82rem; color: var(--ink-muted); margin-bottom: 20px; font-weight:400; }
+.plan-price-row { display: flex; align-items: baseline; gap: 3px; margin-bottom: 5px; }
+.plan-cur { font-size: .9rem; color: var(--ink-muted); font-weight:500; }
+.plan-amt { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 700; line-height: 1; color: var(--plan-color); letter-spacing: -0.04em; }
+.plan-suffix { font-size: .8rem; color: var(--ink-muted); margin-left: 2px; }
+.plan-note { font-size: .74rem; color: var(--ink-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 4px; }
+.plan-divider { height:1px; background:var(--border); margin-bottom:18px; }
+.plan-features { list-style:none; flex:1; margin-bottom:24px; }
+.plan-features li { display: flex; align-items: flex-start; gap: 9px; font-size: .875rem; color: var(--ink-light); margin-bottom: 10px; line-height: 1.45; letter-spacing: 0; }
+.plan-features li i { font-size: .85rem; color: var(--plan-color); flex-shrink: 0; margin-top: 3px; background: var(--plan-bg); width: 18px; height: 18px; border-radius: 50%; display: flex; align-items:center; justify-content:center; }
+.plan-btn { display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; padding: .72rem 1rem; border-radius: 9px; font-size: .875rem; font-weight: 600; border: 2px solid var(--plan-color); color: var(--plan-color); background: var(--plan-bg); transition: background .22s, color .22s; cursor: pointer; }
+.plan-btn:hover, .plan-card.featured .plan-btn { background: var(--plan-color); color: #fff; }
+.section-wrap { max-width: 1080px; margin: 0 auto 58px; padding: 0 6%; animation: fadeUp .55s ease both; }
+.addon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+.addon-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; padding: 18px 16px; transition: transform .24s, box-shadow .24s, border-color .24s; }
+.addon-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.addon-icon { width: 36px; height: 36px; border-radius: 9px; background: var(--blue-light); display: flex; align-items:center; justify-content:center; margin-bottom: 12px; }
+.addon-icon i { font-size: 1rem; color: var(--blue); }
+.addon-name { font-size:.82rem; font-weight:600; color:var(--ink); margin-bottom:7px; line-height:1.3; }
+.addon-price { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--blue); letter-spacing: -0.02em; }
+.maint-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(225px,1fr)); gap: 14px; }
+.maint-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap:12px; transition: transform .24s, box-shadow .24s, border-color .24s; }
+.maint-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.maint-left { display:flex; align-items:center; gap:12px; }
+.maint-icon { width:38px; height:38px; border-radius:10px; background: var(--green-light); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.maint-icon i { font-size:1rem; color:var(--green); }
+.maint-name { font-size:.88rem; font-weight:600; color:var(--ink); }
+.maint-sub  { font-size:.74rem; color:var(--ink-muted); margin-top:1px; }
+.maint-price { font-family:'Fraunces',serif; font-size:1.2rem; font-weight:700; color:var(--green); white-space:nowrap; text-align:right; letter-spacing:-0.02em; }
+.maint-per { font-size:.68rem; color:var(--ink-muted); }
+.terms-wrap { max-width:1080px; margin:0 auto 80px; padding:0 6%; }
+.terms-box { background:var(--white); border:1.5px solid var(--border); border-radius:16px; padding:32px 36px; }
+.terms-box h3 { font-family:'Fraunces',serif; font-size:1rem; font-weight:600; margin-bottom:18px; letter-spacing:-0.01em; display:flex; align-items:center; gap:8px; color:var(--ink); }
+.terms-list { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px 28px; }
+.term-item { display:flex; gap:9px; align-items:flex-start; font-size:.84rem; color:var(--ink-light); line-height:1.5; }
+.term-item i { color:var(--accent); font-size:.85rem; flex-shrink:0; margin-top:3px; }
+footer { text-align:center; padding:28px 6%; border-top:1px solid var(--border); background:var(--white); font-size:.8rem; color:var(--ink-muted); }
+footer strong { font-family:'Fraunces',serif; color:var(--ink); font-size:.9rem; }
+.footer-links { display:flex; justify-content:center; gap:1.5rem; margin-top:10px; }
+.footer-links a { color:var(--ink-muted); text-decoration:none; font-size:.78rem; display:flex; align-items:center; gap:4px; }
+.footer-links a:hover { color:var(--accent); }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:760px){ .plans-grid { grid-template-columns:1fr; } .terms-list { grid-template-columns:1fr; } nav a:not(.btn-nav){ display:none; } }
+@media(max-width:500px){ .addon-grid { grid-template-columns:1fr 1fr; } .maint-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-tag"><i class="bi bi-check-circle-fill"></i> Simple · Transparent · No Hidden Fees</div>
+  <h1>Pick a plan that<br>fits your vision.</h1>
+  <p>From a clean 3-page website to a full SaaS platform — every plan is built for performance and growth.</p>
+  <div class="note-pill"><span class="live-dot"></span> Prices in INR &nbsp;·&nbsp; Fully customizable &nbsp;·&nbsp; Free consultation</div>
+</div>
+<div class="plans-wrap">
+  <div class="section-title">Our Packages <span>All plans include mobile-responsive design</span></div>
+  <div class="plans-grid">
+    <div class="plan-card" style="--plan-color:#e8622a;--plan-bg:#fff1eb;">
+      <div class="plan-icon-wrap"><i class="bi bi-globe2"></i></div>
+      <div class="plan-name">Website</div>
+      <div class="plan-sub">Perfect for businesses &amp; creators</div>
+      <div class="plan-price-row"><span class="plan-cur">₹</span><span class="plan-amt">7,000</span></div>
+      <div class="plan-note"><i class="bi bi-info-circle"></i> One-time · starting price</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li><i class="bi bi-check-lg"></i> 3 smooth, animated pages</li>
+        <li><i class="bi bi-globe"></i> Free domain (1 year)</li>
+        <li><i class="bi bi-search"></i> SEO setup &amp; Google Indexing</li>
+        <li><i class="bi bi-envelope-paper"></i> Contact form included</li>
+        <li><i class="bi bi-tools"></i> Free lifetime maintenance</li>
+        <li><i class="bi bi-phone"></i> Mobile responsive design</li>
+        <!-- <li><i class="bi bi-whatsapp"></i> WhatsApp chat integration</li> -->
+      </ul>
+<a href="https://wa.me/918825722455" target="_blank" class="plan-btn">
+    <i class="bi bi-whatsapp"></i> Get Started
+</a>    </div>
+    <div class="plan-card featured" style="--plan-color:#16a34a;--plan-bg:#dcfce7;">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-icon-wrap" style="margin-top:10px;"><i class="bi bi-cart3"></i></div>
+      <div class="plan-name">E-Commerce</div>
+      <div class="plan-sub">Online store &amp; product management</div>
+      <div class="plan-price-row"><span class="plan-cur">₹</span><span class="plan-amt">15,000</span><span class="plan-suffix">onwards</span></div>
+      <div class="plan-note"><i class="bi bi-info-circle"></i> Price varies by products &amp; features</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li><i class="bi bi-box-seam"></i> Product catalogue &amp; inventory</li>
+        <li><i class="bi bi-credit-card"></i> Payment gateway integration</li>
+        <li><i class="bi bi-clipboard-data"></i> Order management dashboard</li>
+        <li><i class="bi bi-bag-check"></i> Cart, wishlist &amp; checkout</li>
+        <li><i class="bi bi-graph-up-arrow"></i> SEO + Google Analytics</li>
+        <li><i class="bi bi-phone"></i> Mobile-first responsive UI</li>
+        <li><i class="bi bi-arrows-angle-expand"></i> Scales with your requirements</li>
+      </ul>
+      <a href="https://wa.me/918825722455" target="_blank" class="plan-btn"><i class="bi bi-arrow-right-circle"></i> Get Started</a>
+    </div>
+    <div class="plan-card" style="--plan-color:#7c3aed;--plan-bg:#f5f3ff;">
+      <div class="plan-icon-wrap"><i class="bi bi-rocket-takeoff"></i></div>
+      <div class="plan-name">Custom &amp; SaaS</div>
+      <div class="plan-sub">Platforms, apps &amp; SaaS products</div>
+      <div class="plan-price-row"><span class="plan-amt" style="font-size:2rem;">Custom</span></div>
+      <div class="plan-note"><i class="bi bi-info-circle"></i> Quoted after requirements discussion</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li><i class="bi bi-diagram-3"></i> SaaS product architecture</li>
+        <li><i class="bi bi-shield-lock"></i> User auth &amp; role management</li>
+        <li><i class="bi bi-receipt-cutoff"></i> Subscription &amp; billing system</li>
+        <li><i class="bi bi-speedometer2"></i> Admin &amp; analytics dashboard</li>
+        <li><i class="bi bi-plug"></i> API integrations &amp; webhooks</li>
+        <li><i class="bi bi-cloud-arrow-up"></i> Scalable cloud deployment</li>
+        <li><i class="bi bi-headset"></i> Dedicated support &amp; roadmap</li>
+      </ul>
+      <a href="https://wa.me/918825722455" target="_blank" class="plan-btn"><i class="bi bi-telephone"></i> Book a Call</a>
+    </div>
+  </div>
+</div>
+<div class="section-wrap">
+  <div class="section-title">Features &amp; Add-ons <span>7 available</span></div>
+  <div class="addon-grid">
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-credit-card-2-front"></i></div><div class="addon-name">Payment Gateway</div><div class="addon-price">₹ 3,000</div></div>
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-bar-chart-line"></i></div><div class="addon-name">Google Analytics Setup</div><div class="addon-price">₹ 1,500</div></div>
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-search-heart"></i></div><div class="addon-name">SEO Setup</div><div class="addon-price">₹ 2,000</div></div>
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-google"></i></div><div class="addon-name">Google Search Indexing</div><div class="addon-price">₹ 1,000</div></div>
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-layout-sidebar-inset"></i></div><div class="addon-name">Admin Dashboard</div><div class="addon-price">₹ 8,000+</div></div>
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-whatsapp"></i></div><div class="addon-name">WhatsApp Integration</div><div class="addon-price">₹ 800</div></div>
+    <div class="addon-card"><div class="addon-icon"><i class="bi bi-envelope-at"></i></div><div class="addon-name">Email Integration</div><div class="addon-price">₹ 1,000</div></div>
+  </div>
+</div>
+<div class="section-wrap">
+  <div class="section-title">Maintenance &amp; Support <span>4 services</span></div>
+  <div class="maint-grid">
+    <!-- <div class="maint-card"><div class="maint-left"><div class="maint-icon"><i class="bi bi-arrow-repeat"></i></div><div><div class="maint-name">Monthly Maintenance</div><div class="maint-sub">Ongoing updates &amp; support</div></div></div><div><div class="maint-price">₹ 2,000</div><div class="maint-per">/month</div></div></div> -->
+    <div class="maint-card"><div class="maint-left"><div class="maint-icon"><i class="bi bi-pencil-square"></i></div><div><div class="maint-name">Website Updates</div><div class="maint-sub">Content &amp; feature changes</div></div></div><div class="maint-price">₹ 1,000+</div></div>
+    <div class="maint-card"><div class="maint-left"><div class="maint-icon"><i class="bi bi-speedometer"></i></div><div><div class="maint-name">Performance Optimization</div><div class="maint-sub">Speed &amp; Core Web Vitals</div></div></div><div class="maint-price">₹ 2,500</div></div>
+    <div class="maint-card"><div class="maint-left"><div class="maint-icon"><i class="bi bi-bug"></i></div><div><div class="maint-name">Bug Fixing Support</div><div class="maint-sub">Issue resolution &amp; testing</div></div></div><div class="maint-price">₹ 1,500+</div></div>
+  </div>
+</div>
+<div class="terms-wrap">
+  <div class="terms-box">
+    <h3><i class="bi bi-file-earmark-text" style="color:var(--accent);"></i> Project Terms</h3>
+    <div class="terms-list">
+      <div class="term-item"><i class="bi bi-dot"></i>50% advance payment before project start</div>
+      <div class="term-item"><i class="bi bi-dot"></i>Remaining balance before final deployment</div>
+      <div class="term-item"><i class="bi bi-dot"></i>Timelines vary by project complexity</div>
+      <div class="term-item"><i class="bi bi-dot"></i>Hosting &amp; domain may be charged separately</div>
+      <div class="term-item"><i class="bi bi-dot"></i>Limited revisions included per package</div>
+      <div class="term-item"><i class="bi bi-dot"></i>Extra features may increase project cost</div>
+    </div>
+  </div>
+</div>
+<footer>
+  <strong>Websiity</strong><br>
+  Modern websites built for design, performance, scalability &amp; growth.<br>
+  <div class="footer-links">
+    <a href="#"><i class="bi bi-envelope"></i> hello@websiity.com</a>
+    <a href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+    <a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a>
+  </div>
+  <div style="margin-top:12px;">© 2025 Websiity. All prices in INR and subject to change.</div>
+</footer>
+</body>
+</html>
