@@ -58,7 +58,6 @@
     ]
   }
   </script>
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <meta name="google-site-verification" content="Z5b1mjUH6t7N1pixcyhjUH4xm56mvptPv3Ps671emnA" />
@@ -68,7 +67,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-JBDL5G7PCZ');
 </script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -92,38 +90,53 @@
         }
   </style>
   <!-- NAV -->
-  <nav
-    class="bg-white px-6 py-3 flex justify-between items-center sticky top-0 z-[1000] shadow-[0_2px_20px_rgba(0,0,0,0.05)] animate-slide-down">
-    <div class="grad-logo text-2xl font-extrabold tracking-tight">
-      <img onclick="location.href='/'" src="./images/Websiity_logo.png" alt="Websiity" class="h-16 w-auto" />
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+ <div
+  class="bg-black rounded-full px-6 py-4 flex items-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-all duration-300 ease-out origin-center">
+    <!-- Left Menu -->
+    <div class="hidden lg:flex items-center gap-8">
+  
+  
+ <a href="#bootcamp" class="text-white text-sm font-medium hover:text-orange-400 transition">Bootcamp</a>
+ <a href="#team" class="text-white text-sm font-medium hover:text-orange-400 transition">Team</a>
+     <a href="#services"
+        class="text-white text-sm font-medium hover:text-orange-400 transition">
+        Services
+      </a>
+     <a href="./pages/pricing.html"
+        class="text-white text-sm font-medium hover:text-orange-400 transition">
+        Pricing
+      </a>
+ <a href="#about" class="text-white text-sm font-medium hover:text-orange-400 transition">About</a> 
     </div>
-    <!-- Desktop Menu -->
-    <div class="hidden lg:flex gap-6 items-center">
-      <a href="#services"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Services</a>
-      <a href="#portfolio"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Work</a>
-      <a href="#about"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">About</a>
-      <a href="#team"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Team</a>
-      <a href="#bootcamp"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Bootcamp</a>
-      <a href="./pages/pricing.html" target="_blank"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Pricing</a>
+    <!-- Center Logo -->
+    <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+      <img src="./images/Websiity_logo.png"
+        alt="Websiity"
+        class="h-12 w-auto brightness-0 invert">
+      <!-- <span class="text-white font-bold text-lg">
+        Websiity
+      </span> -->
+    </div>
+    <!-- Right Side -->
+    <div class="hidden lg:flex items-center gap-6">
+ <button
+    id="theme-toggle-btn"
+    aria-label="Toggle theme"
+    title="Toggle Light / Dark"
+    class="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300">
+    <i id="theme-icon" class="bi bi-sun"></i>
+  </button>
       <a href="#contact"
-        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Contact</a>
-      <button onclick="location.href='#contact'"
-        class="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-8 py-3 rounded-full font-semibold shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(59,130,246,0.4)] transition-all duration-300">Get
-        in Touch</button>
+        class="bg-[#F58A5D] hover:bg-[#eb7d4e] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+        Contact Us
+      </a>
     </div>
-    <!-- Mobile Hamburger -->
-    <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-blue-500 focus:outline-none z-[1010]">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </nav>
+  <!-- Mobile Hamburger --> 
+   <button id="mobile-menu-btn" class="lg:hidden  text-slate-600 hover:text-blue-500 focus:outline-none z-[1010]">
+     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button>
+  </div>
+</nav>
   <!-- Mobile Sidebar Overlay -->
   <div id="mobile-sidebar"
     class="fixed inset-0 bg-slate-900/50 z-[1005] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
@@ -132,7 +145,7 @@
   <div id="mobile-menu"
     class="fixed top-0 right-0 h-full w-72 bg-white z-[1010] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl flex flex-col pt-20 px-6">
     <button id="close-menu-btn"
-      class="absolute top-5 right-6 p-2 text-slate-600 hover:text-blue-500 focus:outline-none">
+      class="absolute top-5 right-6 p-2 text-white-600  focus:outline-none">
       <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
@@ -145,61 +158,63 @@
       class="mobile-link block py-4 border-b border-slate-100 text-slate-600 font-medium hover:text-blue-500">About</a>
     <a href="#team"
       class="mobile-link block py-4 border-b border-slate-100 text-slate-600 font-medium hover:text-blue-500">Team</a>
+    <a href="./pages/pricing.html" target="_blank"
+        class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Pricing</a>
     <a href="#bootcamp"
       class="mobile-link block py-4 border-b border-slate-100 text-slate-600 font-medium hover:text-blue-500">Bootcamp</a>
-    <a href="#contact" class="mobile-link block py-4 text-slate-600 font-medium hover:text-blue-500">Contact</a>
-    <button
-      class="mt-8 bg-gradient-to-r from-blue-500 to-cyan-400 text-white w-full py-3 rounded-full font-semibold shadow-[0_4px_15px_rgba(59,130,246,0.3)]">Get
+    <!-- <a href="#contact" class="mobile-link block py-4 text-slate-600 font-medium hover:text-blue-500">Contact</a> -->
+    <!-- Theme Toggle Row (inside sidebar) -->
+    <div class="flex items-center justify-between py-4 border-b border-slate-100 mt-2">
+      <span class="text-sm font-semibold text-slate-600" id="theme-label-mobile">Light Mode</span>
+      <button id="theme-toggle-btn-mobile" aria-label="Toggle theme"
+        class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 text-slate-600 hover:text-blue-500 hover:border-blue-400 transition-all duration-300 text-lg">
+        <i id="theme-icon-mobile" class="bi bi-sun"></i>
+      </button>
+    </div>
+    <button onclick="location.href='#contact'"
+      class="mt-6 bg-gradient-to-r from-blue-500 to-cyan-400 text-white w-full py-3 rounded-full font-semibold shadow-[0_4px_15px_rgba(59,130,246,0.3)]">Get
       in Touch</button>
   </div>
   <!-- HERO -->
-  <section
-    class="px-12 py-24 bg-gradient-to-br from-white via-blue-50/50 to-cyan-50/50 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen animate-fade-in">
-    <div>
-      <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-slate-900"
-        style="animation:slideInLeft 0.8s ease-out 0.2s both">
-        Transform Your<span class="highlight"> Digital Vision</span> Into Reality
-      </h1>
-      <p class="text-xl text-slate-500 mb-8 leading-relaxed" style="animation:slideInLeft 0.8s ease-out 0.3s both">
-        We're a team of builders and dreamers crafting remarkable digital products, scalable platforms, and
-        unforgettable brand experiences for the future.
-      </p>
-      <div class="flex flex-wrap gap-6" style="animation:slideInLeft 0.8s ease-out 0.4s both">
-        <button
-          class="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-8 py-3 rounded-full font-semibold shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(59,130,246,0.4)] transition-all duration-300">Start
-          Your Project</button>
-        <button onclick="location.href='#portfolio'"
-          class="bg-white text-blue-500 px-8 py-3 rounded-full border-2 border-blue-500 font-semibold hover:bg-blue-500 hover:text-white hover:-translate-y-0.5 transition-all duration-300">Explore
-          Our Work</button>
-      </div>
+<section class="min-h-screen flex items-center justify-center px-5 sm:px-6 pt-28 lg:pt-20 bg-[#f8f8f8] relative overflow-hidden">
+
+  <!-- Noise Texture -->
+  <div class="absolute inset-0 opacity-30 pointer-events-none"
+    style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22 viewBox=%220 0 200 200%22%3E%3Ccircle cx=%2220%22 cy=%2230%22 r=%221%22 fill=%22%23999%22/%3E%3Ccircle cx=%2280%22 cy=%2260%22 r=%221%22 fill=%22%23999%22/%3E%3Ccircle cx=%22150%22 cy=%22120%22 r=%221%22 fill=%22%23999%22/%3E%3Ccircle cx=%22100%22 cy=%22180%22 r=%221%22 fill=%22%23999%22/%3E%3C/svg%3E');">
+  </div>
+
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+
+    <h1
+      class="font-serif text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[7rem] leading-[0.9] tracking-tight text-black mb-6">
+      Transform Your
+      <br>
+      Digital Vision
+      <br>
+      Into Reality
+    </h1>
+
+    <p
+      class="max-w-2xl mx-auto text-gray-500 text-base sm:text-lg lg:text-xl leading-relaxed mb-10 px-2">
+      Experience high-performance digital solutions with modern design,
+      scalable architecture, and seamless user experiences that help your
+      business grow faster.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <button
+        class="w-full sm:w-auto bg-orange-400 hover:bg-orange-500 text-white font-semibold px-10 py-4 rounded-full transition-all duration-300">
+        Get Started
+      </button>
+
+      <button
+        class="w-full sm:w-auto bg-white border border-gray-200 hover:border-gray-300 text-gray-700 font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-sm">
+        View Portfolio
+      </button>
     </div>
-    <div class="relative animate-float">
-      <div
-        class="absolute w-[400px] h-[400px] bg-gradient-to-br from-blue-100 to-cyan-100 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-blob -z-0 top-0 left-0">
-      </div>
-      <div class="relative bg-white p-8 rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] z-10">
-        <h3 class="text-blue-500 font-bold text-center mb-4">Our Impact</h3>
-        <div class="grid grid-cols-2 gap-4 text-center">
-          <div>
-            <div class="text-4xl font-extrabold text-blue-500">50+</div>
-            <div class="text-slate-500 text-sm">Projects Delivered</div>
-          </div>
-          <div>
-            <div class="text-4xl font-extrabold text-cyan-400">20+</div>
-            <div class="text-slate-500 text-sm">Team Members</div>
-          </div>
-          <div>
-            <div class="text-4xl font-extrabold text-blue-500">98%</div>
-            <div class="text-slate-500 text-sm">Client Satisfaction</div>
-          </div>
-          <div>
-            <div class="text-4xl font-extrabold text-cyan-400">15+</div>
-            <div class="text-slate-500 text-sm">Years Combined</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  </div>
+</section>
   <!-- SERVICES -->
   <section class="py-20 px-12 bg-gradient-to-b from-slate-50 to-white" id="services">
     <div class="text-center mb-16">
@@ -282,7 +297,7 @@
     </div>
   </section>
   <!-- PORTFOLIO -->
-  <section class="py-32 px-8 bg-white flex flex-col items-center max-w-[1400px] mx-auto" id="portfolio">
+  <!-- <section class="py-32 px-8 bg-white flex flex-col items-center max-w-[1400px] mx-auto" id="portfolio">
     <div class="text-center mb-16 flex flex-col items-center">
       <div
         class="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-5 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase mb-6">
@@ -294,7 +309,6 @@
         showcase our expertise across design, development, and strategy.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-12">
-      <!-- NovaTech -->
       <div
         class="p-item relative rounded-2xl overflow-hidden flex h-[280px] shadow-sm hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-purple-100 to-indigo-100">
         <div class="relative z-10 p-10 flex flex-col w-full md:w-[55%]">
@@ -331,7 +345,6 @@
           </div>
         </div>
       </div>
-      <!-- BrandIdentity -->
       <div
         class="p-item relative rounded-2xl overflow-hidden flex h-[280px] shadow-sm hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-pink-100 to-rose-100">
         <div class="relative z-10 p-10 flex flex-col w-full md:w-[55%]">
@@ -365,7 +378,6 @@
           </div>
         </div>
       </div>
-      <!-- E-Commerce -->
       <div
         class="p-item relative rounded-2xl overflow-hidden flex h-[280px] shadow-sm hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-sky-100 to-blue-100">
         <div class="relative z-10 p-10 flex flex-col w-full md:w-[55%]">
@@ -399,7 +411,6 @@
           </div>
         </div>
       </div>
-      <!-- FinTech -->
       <div
         class="p-item relative rounded-2xl overflow-hidden flex h-[280px] shadow-sm hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-emerald-50 to-green-100">
         <div class="relative z-10 p-10 flex flex-col w-full md:w-[55%]">
@@ -453,6 +464,101 @@
       </svg>
       View All Projects
     </a>
+  </section> -->
+  <section class="max-w-6xl mx-auto  featured-work">
+    <!-- Header -->
+    <div class="mb-14 max-w-xl">
+      <h2 class="font-display text-black mt-10 text-4xl sm:text-5xl font-700 text-[#14181F] leading-[1.05] mb-4">
+       Featured Work
+      </h2>
+      <p class="text-[#6B6F76] text-base sm:text-lg leading-relaxed">
+        A look at what's being built next early previews of projects still taking shape. 
+      </p>
+    </div>
+    <!-- Card Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <article onclick="openModal('Yatras Cooking Cave', './images/project2.png', 'yatras is a Cloud Kitchen deliver traditional tamilnadu foods')" class="card bg-white rounded-2xl overflow-hidden border border-[#E5E3DB] relative cursor-pointer hover:shadow-xl transition-shadow duration-300">
+        <div class="overflow-hidden h-48">
+          <img src="./images/project2.png" alt=" Yatras Cooking Cave project preview" class="card-img w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-600 text-[#14181F] mb-1">Yatras Cooking Cave</h3>
+          <p class="text-sm text-[#6B6F76] mb-5" style="text-transform: capitalize;">yatras is a Cloud Kitchen deliver traditional tamilnadu foods</p>
+          <button onclick="event.stopPropagation(); window.open('https://yatrascookingcave.com/','_blank')" class="preview-btn inline-flex items-center gap-2 text-sm font-semibold text-[#2D5BFF] hover:text-[#1a3fcc]">
+            Preview
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+          <article onclick="openModal('Yatras Cooking Cave', './images/project2.png', 'yatras is a Cloud Kitchen deliver traditional tamilnadu foods')" class="card bg-white rounded-2xl overflow-hidden border border-[#E5E3DB] relative cursor-pointer hover:shadow-xl transition-shadow duration-300">
+        <div class="overflow-hidden h-48">
+          <img src="./images/Akhet_image.png" alt="AKHET Studio project preview" class="card-img w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-600 text-[#14181F] mb-1">Akhet studio</h3>
+          <p class="text-sm text-[#6B6F76] mb-5" style="text-transform: capitalize;">AKHET Design Studio crafts purposeful architecture, refined interiors, and turnkey construction solutions.</p>
+          <button onclick="event.stopPropagation(); window.open('https://www.akhetstudio.com/','_blank')" class="preview-btn inline-flex items-center gap-2 text-sm font-semibold text-[#2D5BFF] hover:text-[#1a3fcc]">
+            Preview
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <article onclick="openModal('Max Effert Studio', './images/project1.png', 'A visual workflow builder for Next.js apps')" class="card bg-white rounded-2xl overflow-hidden border border-[#E5E3DB] relative cursor-pointer hover:shadow-xl transition-shadow duration-300">
+        <div class="overflow-hidden h-48">
+          <img src="./images/project1.png" alt="NextFlow project preview" class="card-img w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-600 text-[#14181F] mb-1">Max Effort Studio</h3>
+          <p class="text-sm text-[#6B6F76] mb-5" style="text-transform: capitalize;">Max Effort studio is a design firm that specializes in creating visually stunning and functional 3d Models </p>
+          <button onclick="event.stopPropagation(); window.open('https://max-chi-five.vercel.app/','_blank')" class="preview-btn inline-flex items-center gap-2 text-sm font-semibold text-[#2D5BFF] hover:text-[#1a3fcc]">
+            Preview
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <article onclick="openModal('K Click Studio', './images/project3.png', 'photographer portfolios from a CSV')" class="card bg-white rounded-2xl overflow-hidden border border-[#E5E3DB] relative cursor-pointer hover:shadow-xl transition-shadow duration-300">
+        <div class="overflow-hidden h-48">
+          <img src="./images/project3.png" alt="Portfolio generator preview" class="card-img w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-600 text-[#14181F] mb-1">K Click Studio</h3>
+          <p class="text-sm text-[#6B6F76] mb-5" style="text-transform: capitalize;"> photographer portfolios from a CSV</p>
+          <button onclick="event.stopPropagation(); window.open('https://kclicksstudio.vercel.app/', '_blank')" class="preview-btn inline-flex items-center gap-2 text-sm font-semibold text-[#2D5BFF] hover:text-[#1a3fcc]">
+            Preview
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Card 4 -->
+      <article onclick="openModal('Guru Online Store', './images/project4.png', 'Guru is a medium scale online store with a wide range of products')" class="card bg-white rounded-2xl overflow-hidden border border-[#E5E3DB] relative cursor-pointer hover:shadow-xl transition-shadow duration-300">
+        <div class="overflow-hidden h-48">
+          <img src="./images/project4.png" alt="Portfolio generator preview" class="card-img w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-600 text-[#14181F] mb-1">Guru Online Store</h3>
+          <p class="text-sm text-[#6B6F76] mb-5" style="text-transform: capitalize;">Guru is a medium scale online store with a wide range of products</p>
+          <button onclick="event.stopPropagation(); window.open('https://guruonlinestore.vercel.app/', '_blank')" class="preview-btn inline-flex items-center gap-2 text-sm font-semibold text-[#2D5BFF] hover:text-[#1a3fcc]">
+            Preview
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+    </div>
   </section>
   <!-- ABOUT -->
   <section class="py-32 px-12 bg-[#fafafa] flex flex-col gap-24" id="about">
@@ -461,7 +567,7 @@
         <div class="flex items-center gap-3 text-xs font-extrabold tracking-[2px] text-slate-800 uppercase mb-4">
           <span class="w-5 h-0.5 bg-indigo-500 inline-block"></span>ABOUT US
         </div>
-        <h2 class="text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.15] text-gray-900">
+        <h2 class="text-5xl  lg:text-6xl font-extrabold mb-6 leading-[1.15] text-gray-900">
           We're a team of <br /><span class="text-indigo-500">builders</span> and <br /><span
             class="text-sky-500">dreamers</span>
         </h2>
@@ -782,7 +888,7 @@
     </div>
   </section>
   <!-- BOOTCAMP -->
-  <section class="py-32 px-8 bg-[#fafafa] border-t border-slate-100" id="bootcamp">
+  <!-- <section class="py-32 px-8 bg-[#fafafa] border-t border-slate-100" id="bootcamp">
     <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
         <div
@@ -835,7 +941,7 @@
           class="absolute right-0 bottom-[10%] w-1/2 rounded-[16px] shadow-[0_15px_30px_rgba(0,0,0,0.15)] z-20 border-[6px] border-[#fafafa]" />
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- contact form  -->
   <section id="contact" class="py-28 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -981,7 +1087,7 @@
         <ul class="space-y-3 text-sm">
           <li><a href="mailto:websiity@gmail.com"
               class="hover:text-blue-400 transition-colors duration-300">websiity@gmail.com</a></li>
-          <li><a href="tel:+916049990180" class="hover:text-blue-400 transition-colors duration-300">+91 7604990180</a>
+          <li><a href="tel:+917604990180" class="hover:text-blue-400 transition-colors duration-300">+91 7604990180</a>
           </li>
           <li>Chennai, India</li>
         </ul>
@@ -1009,6 +1115,25 @@
     </div>
   </div> -->
   <script>
+const navbar = document.querySelector("nav");
+const navContainer = navbar.querySelector("div");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navContainer.classList.add(
+      "scale-[0.95]",
+      "py-3",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.35)]"
+    );
+    navContainer.classList.remove("py-4");
+  } else {
+    navContainer.classList.remove(
+      "scale-[0.95]",
+      "py-3",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.35)]"
+    );
+    navContainer.classList.add("py-4");
+  }
+});
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const btnText = document.getElementById('btn-text');
@@ -1135,6 +1260,91 @@
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMobileMenu);
     if (mobileSidebar) mobileSidebar.addEventListener('click', toggleMobileMenu);
     mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+    // ── Theme Toggle ──
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeIconMobile = document.getElementById('theme-icon-mobile');
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.setAttribute('data-theme', 'dark');
+        if (themeIcon) { themeIcon.className = 'bi bi-moon-stars-fill'; }
+        if (themeIconMobile) { themeIconMobile.className = 'bi bi-moon-stars-fill'; }
+      } else {
+        htmlEl.removeAttribute('data-theme');
+        if (themeIcon) { themeIcon.className = 'bi bi-sun'; }
+        if (themeIconMobile) { themeIconMobile.className = 'bi bi-sun'; }
+      }
+      localStorage.setItem('websiity-theme', theme);
+    }
+    function toggleTheme() {
+      const current = htmlEl.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+    // Restore saved preference or use OS preference
+    const savedTheme = localStorage.getItem('websiity-theme');
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+    if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+  </script>
+  <!-- Modal Backdrop -->
+  <div id="projectModal" class="fixed inset-0 z-[2000] hidden flex items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300 opacity-0 px-4">
+    <!-- Modal Dialog -->
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col transform scale-95 transition-transform duration-300 relative" id="projectModalContent">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center p-6 border-b border-gray-100 shrink-0">
+        <h5 class="text-2xl font-bold text-slate-900" id="modalTitle">Project Title</h5>
+        <button type="button" class="text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition-colors focus:outline-none" onclick="closeModal()">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <!-- Modal Body -->
+      <div class="p-6 overflow-y-auto">
+        <img id="modalImage" src="" alt="Project Image" class="w-full h-auto rounded-xl mb-6 shadow-sm object-cover max-h-[50vh]">
+        <h6 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wider">Case Study Overview</h6>
+        <p id="modalDesc" class="text-slate-600 text-base leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openModal(title, imgSrc, desc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalImage').src = imgSrc;
+      document.getElementById('modalDesc').innerText = desc;
+      const modal = document.getElementById('projectModal');
+      const modalContent = document.getElementById('projectModalContent');
+      modal.classList.remove('hidden');
+      // Force reflow
+      void modal.offsetWidth;
+      modal.classList.remove('opacity-0');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const modal = document.getElementById('projectModal');
+      const modalContent = document.getElementById('projectModalContent');
+      modal.classList.add('opacity-0');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+    // Close when clicking outside
+    document.getElementById('projectModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>

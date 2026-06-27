@@ -69,3 +69,77 @@ body {
 .contact-link:hover .contact-value {
   color: #7c3aed;
 }
+
+/* ─── Dark Theme — Contact Section ─── */
+
+/* Section background */
+[data-theme="dark"] #contact {
+  background-color: #0f172a !important;
+}
+
+/* Header badge */
+[data-theme="dark"] #contact .bg-violet-100 {
+  background-color: rgba(124, 58, 237, 0.2) !important;
+  color: #c4b5fd !important;
+}
+
+/* Heading & paragraph */
+[data-theme="dark"] #contact h2 {
+  color: #f1f5f9 !important;
+}
+[data-theme="dark"] #contact p.text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+/* ── Contact Info Card ── */
+[data-theme="dark"] #contact .bg-white {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+[data-theme="dark"] #contact h3 {
+  color: #f1f5f9 !important;
+}
+
+/* Labels (Email / Phone / Office small text) */
+[data-theme="dark"] #contact .text-gray-400 {
+  color: #64748b !important;
+}
+
+/* Values (email address, phone number, location) */
+[data-theme="dark"] #contact .text-gray-800 {
+  color: #cbd5e1 !important;
+}
+
+/* Icon boxes */
+[data-theme="dark"] #contact .bg-violet-50 {
+  background-color: rgba(124, 58, 237, 0.15) !important;
+}
+[data-theme="dark"] #contact .group:hover .bg-violet-50,
+[data-theme="dark"] #contact .group:hover .group-hover\:bg-violet-100 {
+  background-color: rgba(124, 58, 237, 0.25) !important;
+}
+
+/* ── Form inputs ── */
+[data-theme="dark"] .input-field {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+[data-theme="dark"] .input-field::placeholder {
+  color: #475569 !important;
+}
+[data-theme="dark"] .input-field:focus {
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18) !important;
+  background-color: #1e293b !important;
+}
+
+/* ── Working Hours card stays vivid — no override needed ── */
+
+/* ── "Send a Message" form card ── */
+[data-theme="dark"] #contact .lg\:col-span-3.bg-white {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* ── Submit button — unchanged; gradient looks great in both modes ── */

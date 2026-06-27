@@ -1,19 +1,198 @@
 :root{
     --primary-blue:#2563eb;
     --accent-cyan:#06b6d4;
+    /* Light theme tokens */
+    --bg-body: #f8fafc;
+    --bg-nav: #ffffff;
+    --bg-card: #ffffff;
+    --bg-section: #f8fafc;
+    --bg-section-alt: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --border-color: #e2e8f0;
+    --shadow-nav: 0 2px 20px rgba(0,0,0,0.05);
+    --shadow-card: 0 10px 40px rgba(0,0,0,0.03);
+    --mobile-menu-bg: #ffffff;
+    --hero-bg-from: #ffffff;
+    --hero-bg-to: #eff6ff;
+    --input-bg: #ffffff;
+    --input-border: #e2e8f0;
+    --toggle-track: #e2e8f0;
+    --toggle-knob: #ffffff;
+}
+[data-theme="dark"] {
+    --bg-body: #0f172a;
+    --bg-nav: #0f172a;
+    --bg-card: #0f172a;
+    --bg-section: #0f172a;
+    --bg-section-alt: #0f172a;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #334155;
+    --shadow-nav: 0 2px 20px rgba(0,0,0,0.4);
+    --shadow-card: 0 10px 40px rgba(0,0,0,0.3);
+    --mobile-menu-bg: #1e293b;
+    --hero-bg-from: #0f172a;
+    --hero-bg-to: #1e293b;
+    --input-bg: #334155;
+    --input-border: #475569;
+    --toggle-track: #3b82f6;
+    --toggle-knob: #ffffff;
+}
+/* Smooth transition for theme switch */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Poppins', sans-serif; */
 }
 ::-webkit-scrollbar{
     display: none;
 }
- .highlight {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+.highlight {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+/* ── Body & Nav ── */
+body {
+    background-color: var(--bg-body) !important;
+    color: var(--text-primary) !important;
+}
+nav {
+    /* background-color: var(--bg-nav) !important; */
+    /* box-shadow: var(--shadow-nav) !important; */
+}
+/* ── Theme Toggle Button ── */
+#theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-color);
+    background: var(--bg-card);
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+#theme-toggle-btn:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    transform: rotate(20deg) scale(1.1);
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+}
+/* ── Nav links ── */
+[data-theme="dark"] .nav-link {
+    color: var(--text-secondary) !important;
+}
+[data-theme="dark"] .nav-link:hover {
+    color: #60a5fa !important;
+}
+/* ── Hero Section ── */
+[data-theme="dark"] section.animate-fade-in {
+    background: linear-gradient(135deg, var(--bg-body) 0%, #1e293b 50%, #162032 100%) !important;
+}
+[data-theme="dark"] h1.text-slate-900 {
+    color: var(--text-primary) !important;
+}
+/* ── Service Cards ── */
+[data-theme="dark"] .service-card {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+[data-theme="dark"] .service-card h3 {
+    color: var(--text-primary) !important;
+}
+[data-theme="dark"] .service-card p {
+    color: var(--text-secondary) !important;
+}
+/* ── Services Section ── */
+[data-theme="dark"] #services {
+    background: linear-gradient(to bottom, #0f172a, #1e293b) !important;
+}
+/* ── Portfolio Section ── */
+[data-theme="dark"] #portfolio {
+    background-color: var(--bg-card) !important;
+}
+[data-theme="dark"] .p-item h3 {
+    color: var(--text-primary) !important;
+}
+[data-theme="dark"] .p-item p {
+    color: var(--text-secondary) !important;
+}
+[data-theme="dark"] .featured-work div> h1 {
+    color: var(--text-secondary) !important;
+}
+/* ── About Section ── */
+[data-theme="dark"] #about {
+    background-color: var(--bg-section) !important;
+}
+[data-theme="dark"] #about h2,
+[data-theme="dark"] #about h4 {
+    color: var(--text-primary) !important;
+}
+[data-theme="dark"] #about p {
+    color: var(--text-secondary) !important;
+}
+[data-theme="dark"] .value-sep p {
+    color: var(--text-secondary) !important;
+}
+/* ── Team Section ── */
+[data-theme="dark"] #team {
+    background-color: var(--bg-section) !important;
+}
+[data-theme="dark"] #team .bg-white {
+    background-color: var(--bg-card) !important;
+}
+[data-theme="dark"] #team h3,
+[data-theme="dark"] #team h2 {
+    color: var(--text-primary) !important;
+}
+[data-theme="dark"] #team p {
+    color: var(--text-secondary) !important;
+}
+/* ── Mobile Menu ── */
+[data-theme="dark"] #mobile-menu {
+    background-color: var(--mobile-menu-bg) !important;
+}
+[data-theme="dark"] .mobile-link {
+    color: var(--text-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+/* ── General text overrides ── */
+[data-theme="dark"] .text-slate-900 { color: var(--text-primary) !important; }
+[data-theme="dark"] .text-slate-500 { color: var(--text-secondary) !important; }
+[data-theme="dark"] .text-slate-600 { color: var(--text-secondary) !important; }
+[data-theme="dark"] .text-gray-900  { color: var(--text-primary) !important; }
+[data-theme="dark"] .text-gray-500  { color: var(--text-secondary) !important; }
+[data-theme="dark"] .bg-white       { background-color: var(--bg-card) !important; }
+[data-theme="dark"] .bg-slate-50    { background-color: var(--bg-section) !important; }
+[data-theme="dark"] .bg-\[#fafafa\] { background-color: var(--bg-section) !important; }
+[data-theme="dark"] .border-slate-200 { border-color: var(--border-color) !important; }
+[data-theme="dark"] .border-slate-100 { border-color: var(--border-color) !important; }
+[data-theme="dark"] .border-gray-100  { border-color: var(--border-color) !important; }
+/* ── Impact card in Hero ── */
+[data-theme="dark"] .bg-white.p-8.rounded-\[20px\] {
+    background-color: var(--bg-card) !important;
+}
+[data-theme="dark"] .text-slate-500.text-sm {
+    color: var(--text-secondary) !important;
+}
+/* ── Keep "Let's Work Together" arrow circle white in dark mode ── */
+[data-theme="dark"] #about a .bg-white {
+    background-color: #ffffff !important;
+    color: #6366f1 !important;
+}
+/* ── "ABOUT US" label text → white in dark mode ── */
+[data-theme="dark"] .text-slate-800 {
+    color: var(--text-primary) !important;
+}
