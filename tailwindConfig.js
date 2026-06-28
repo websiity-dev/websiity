@@ -1,4 +1,5 @@
     tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
       theme: {
         extend: {
           fontFamily: {
@@ -6,6 +7,8 @@
           },
           animation: {
             'float': 'float 3s ease-in-out infinite',
+            'float-slow': 'floatSlow 6s ease-in-out infinite',
+            'float-delayed': 'floatDelayed 5s ease-in-out infinite',
             'blob': 'blobAnimation 8s ease-in-out infinite',
             'slide-down': 'slideDown 0.5s ease-out',
             'fade-in': 'fadeIn 0.8s ease-out',
@@ -27,6 +30,14 @@
             float: {
               '0%,100%': { transform: 'translateY(0px)' },
               '50%': { transform: 'translateY(-30px)' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+              '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+            },
+            floatDelayed: {
+              '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+              '50%': { transform: 'translateY(-22px) rotate(-3deg)' },
             },
             blobAnimation: {
               '0%,100%': { transform: 'translate(0,0) scale(1)' },
