@@ -20,7 +20,6 @@
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
   <script src="./firebase-config.js"></script>
   <script src="tailwindConfig.js"></script>
-
   <style>
     :root {
       --brand: #2563eb;
@@ -30,21 +29,17 @@
       --warning: #d97706;
       --danger: #dc2626;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; min-height: 100vh; }
-
     /* ── View system ── */
     .view { display: none; min-height: 100vh; }
     .view.active { display: flex; flex-direction: column; }
-
     /* ── Fade-up animation ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     .fade-up { animation: fadeUp 0.4s ease forwards; }
-
     /* ── Glass Card ── */
     .glass {
       background: rgba(255,255,255,0.8);
@@ -56,7 +51,6 @@
       background: rgba(15,23,42,0.75) !important;
       border-color: rgba(255,255,255,0.07) !important;
     }
-
     /* ── Input ── */
     .ws-input {
       width: 100%;
@@ -85,7 +79,6 @@
       background: #0f172a;
       border-color: #3b82f6;
     }
-
     /* ── Button primary ── */
     .btn-primary {
       display: flex; align-items: center; justify-content: center; gap: 0.5rem;
@@ -102,7 +95,6 @@
       box-shadow: 0 8px 24px rgba(37,99,235,0.4);
     }
     .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
-
     /* ── Auth Tabs ── */
     .auth-tab {
       flex: 1; padding: 0.55rem 1rem;
@@ -111,10 +103,8 @@
       color: #64748b; background: transparent; border: none; font-family: inherit;
     }
     .auth-tab.active { background: #2563eb; color: #fff; box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
-
     /* ── Strength bar ── */
     .strength-bar { height: 4px; border-radius: 99px; transition: width 0.4s ease, background 0.4s ease; }
-
     /* ── Status badge ── */
     .badge {
       display: inline-flex; align-items: center; gap: 4px;
@@ -129,24 +119,20 @@
     [data-theme="dark"] .badge-interview { background: rgba(219,234,254,.12); color: #60a5fa; }
     [data-theme="dark"] .badge-selected  { background: rgba(220,252,231,.12); color: #4ade80; }
     [data-theme="dark"] .badge-rejected  { background: rgba(254,226,226,.12); color: #f87171; }
-
     /* ── Alert ── */
     .alert { display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px; border-radius: 12px; font-size: 0.875rem; }
     .alert-error   { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
     .alert-success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
     [data-theme="dark"] .alert-error   { background: rgba(239,68,68,.1);  border-color: rgba(239,68,68,.25);   color: #f87171; }
     [data-theme="dark"] .alert-success { background: rgba(34,197,94,.1);  border-color: rgba(34,197,94,.25);   color: #4ade80; }
-
     /* ── Section label ── */
     .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2563eb; margin-bottom: 4px; }
-
     /* ── Admin table ── */
     .ws-table { width: 100%; border-collapse: collapse; }
     .ws-table th { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #94a3b8; padding: 10px 16px; text-align: left; white-space: nowrap; }
     .ws-table td { padding: 14px 16px; border-top: 1px solid #f1f5f9; vertical-align: middle; }
     [data-theme="dark"] .ws-table td { border-color: #1e293b; }
     .ws-table tr:hover td { background: rgba(37,99,235,0.03); }
-
     /* ── Filter chip ── */
     .filter-chip {
       padding: 6px 14px; border-radius: 99px;
@@ -158,13 +144,11 @@
       background: #2563eb; border-color: #2563eb; color: #fff;
     }
     [data-theme="dark"] .filter-chip { border-color: #334155; color: #94a3b8; }
-
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 5px; height: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
     [data-theme="dark"] ::-webkit-scrollbar-thumb { background: #334155; }
-
     /* ── Admin role chip ── */
     .admin-chip {
       display: inline-flex; align-items: center; gap: 6px;
@@ -175,21 +159,17 @@
     }
   </style>
 </head>
-
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white" style="font-family:'Plus Jakarta Sans',sans-serif;">
-
   <!-- ════════════════════════════════════════════════════════════
        NAVBAR
   ════════════════════════════════════════════════════════════ -->
   <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
     <div id="nav-container"
       class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/50 rounded-full px-5 py-3 flex items-center justify-between shadow-lg shadow-slate-900/5 transition-all duration-300">
-
       <a href="./career.html" class="flex items-center gap-2.5">
         <img src="./images/Websiity_logo.png" alt="Websiity" class="h-9 w-auto rounded-full border border-slate-100 dark:border-slate-800" />
         <span class="font-extrabold text-base text-slate-900 dark:text-white tracking-tight hidden sm:block">Websiity</span>
       </a>
-
       <div class="flex items-center gap-3">
         <!-- User chip -->
         <div id="nav-user-chip" class="hidden items-center gap-2 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 rounded-full pl-2.5 pr-4 py-1.5 text-xs font-bold max-w-[160px]">
@@ -205,31 +185,24 @@
           class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200">
           <i id="theme-icon" class="bi bi-sun text-sm"></i>
         </button>
-        
       </div>
     </div>
   </nav>
-
   <!-- ════════════════════════════════════════════════════════════
        VIEW 1 : AUTH  (Login / Sign Up)
   ════════════════════════════════════════════════════════════ -->
   <div id="view-auth" class="view active items-center justify-center pt-24 pb-12 px-4 relative overflow-hidden">
-
     <!-- Background decoration -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 via-white to-indigo-50/50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/20"></div>
       <div class="absolute top-[8%] left-[3%] w-72 h-72 bg-blue-300/25 dark:bg-blue-700/10 rounded-full blur-[90px]"></div>
       <div class="absolute bottom-[5%] right-[5%] w-80 h-80 bg-indigo-200/30 dark:bg-indigo-700/10 rounded-full blur-[100px]"></div>
     </div>
-
     <div class="relative z-10 w-full max-w-5xl mx-auto fade-up">
       <div class="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-12">
-
         <!-- LEFT: Branding panel (desktop only) -->
         <div class="hidden lg:flex flex-col justify-between flex-1 py-8">
           <div>
-
-
             <!-- Role info (shown when a role is selected) -->
             <div id="role-info-panel" class="hidden mb-8 glass rounded-3xl p-6 border-l-4 border-blue-500">
               <p class="section-label mb-2">You are applying for</p>
@@ -243,7 +216,6 @@
                 </span>
               </div>
             </div>
-
             <!-- No role selected message -->
             <div id="no-role-panel">
               <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
@@ -254,19 +226,13 @@
                 Join the Websiity team. Build real products, work with talented people, and grow your career from Day 1.
               </p>
             </div>
-
-         
           </div>
-
-         
         </div>
-
         <!-- RIGHT: Auth Card -->
         <div class="w-full lg:w-[440px] flex-shrink-0">
           <div class="glass rounded-3xl shadow-2xl shadow-slate-900/10 overflow-hidden">
-
             <!-- Card Header -->
-            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 pt-8 pb-6">
+            <!-- <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 pt-8 pb-6">
               <div class="flex items-center justify-between mb-4">
                 <img src="./images/Websiity_logo.png" alt="Websiity" class="h-10 w-auto rounded-xl lg:hidden" />
                 <div id="admin-mode-indicator" class="hidden items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">
@@ -275,16 +241,13 @@
               </div>
               <h2 id="auth-card-title" class="text-2xl font-extrabold text-white">Welcome back</h2>
               <p id="auth-card-sub" class="text-blue-100 text-sm mt-1">Sign in to your Websiity account</p>
-            </div>
-
+            </div> -->
             <!-- Tabs (hidden in admin mode) -->
             <div id="auth-tabs" class="flex gap-1 p-2 bg-slate-100 dark:bg-slate-800/80 mx-6 mt-6 rounded-2xl">
               <button id="tab-login" class="auth-tab active" onclick="switchTab('login')">Sign In</button>
               <button id="tab-signup" class="auth-tab" onclick="switchTab('signup')">Create Account</button>
             </div>
-
             <div class="px-8 pb-8 pt-6">
-
               <!-- ── LOGIN FORM ── -->
               <form id="login-form" class="space-y-4" autocomplete="on">
                 <div>
@@ -304,19 +267,15 @@
                     </button>
                   </div>
                 </div>
-
                 <div id="login-error" class="hidden alert alert-error">
                   <i class="bi bi-exclamation-circle-fill mt-0.5 flex-shrink-0"></i>
                   <span id="login-error-msg"></span>
                 </div>
-
                 <button type="submit" id="login-submit-btn" class="btn-primary mt-2">
                   <span id="login-btn-text">Sign In</span>
                   <i id="login-spinner" class="bi bi-arrow-clockwise hidden" style="animation:spin 0.7s linear infinite;"></i>
-                  <i class="bi bi-arrow-right"></i>
                 </button>
               </form>
-
               <!-- ── SIGNUP FORM ── -->
               <form id="signup-form" class="space-y-4 hidden" autocomplete="on">
                 <div class="grid grid-cols-2 gap-3">
@@ -370,22 +329,18 @@
                     </div>
                   </div>
                 </div>
-
                 <div id="signup-error" class="hidden alert alert-error">
                   <i class="bi bi-exclamation-circle-fill mt-0.5 flex-shrink-0"></i>
                   <span id="signup-error-msg"></span>
                 </div>
-
                 <button type="submit" id="signup-submit-btn" class="btn-primary mt-2">
                   <span>Create Account</span>
                   <i id="signup-spinner" class="bi bi-arrow-clockwise hidden" style="animation:spin 0.7s linear infinite;"></i>
-                  <i class="bi bi-arrow-right"></i>
+                  <!-- <i class="bi bi-arrow-right"></i> -->
                 </button>
               </form>
-
             </div><!-- /px-8 -->
           </div><!-- /glass card -->
-
           <!-- Mobile: role info -->
           <div id="role-info-mobile" class="hidden mt-4 glass rounded-2xl p-4 border-l-4 border-blue-500 lg:hidden">
             <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Applying for</p>
@@ -393,17 +348,14 @@
             <p id="role-info-mobile-meta" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"></p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
   <!-- ════════════════════════════════════════════════════════════
        VIEW 2 : APPLICATION FORM
   ════════════════════════════════════════════════════════════ -->
   <div id="view-apply" class="view flex-col pt-28 pb-16 px-4 bg-slate-50 dark:bg-slate-950">
     <div class="max-w-2xl w-full mx-auto fade-up space-y-6">
-
       <!-- Role Banner -->
       <div id="apply-role-banner" class="glass rounded-2xl p-5 border border-blue-200/60 dark:border-blue-800/40 flex items-center gap-4">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xl flex-shrink-0 shadow-lg shadow-blue-500/20">
@@ -418,7 +370,6 @@
           <i class="bi bi-arrow-left"></i> Change
         </a>
       </div>
-
       <!-- Application Form Card -->
       <div class="glass rounded-3xl shadow-xl shadow-slate-900/5 p-6 sm:p-8">
         <div class="flex items-center gap-3 mb-6">
@@ -430,7 +381,6 @@
             <p class="text-xs text-slate-500 dark:text-slate-400">Fill in your details and upload your resume</p>
           </div>
         </div>
-
         <form id="apply-form" class="space-y-5">
           <!-- Pre-filled (readonly) row -->
           <div class="bg-blue-50/60 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 rounded-2xl p-4">
@@ -450,7 +400,6 @@
               </div>
             </div>
           </div>
-
           <!-- Education -->
           <div>
             <p class="section-label mb-3">Education</p>
@@ -473,8 +422,6 @@
                     <option>2027</option>
                     <option>2028</option>
                     <option>2029</option>
-                    
-                    
                   </select>
                 </div>
               </div>
@@ -487,7 +434,6 @@
               </div>
             </div>
           </div>
-
           <!-- Resume Upload -->
           <div>
             <p class="section-label mb-2">Resume / CV</p>
@@ -504,7 +450,6 @@
               <input id="app-resume" type="file" class="hidden" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="handleResumeSelect(this)" />
             </div>
           </div>
-
           <!-- Alerts -->
           <div id="apply-error" class="hidden alert alert-error">
             <i class="bi bi-exclamation-circle-fill mt-0.5 flex-shrink-0"></i>
@@ -514,7 +459,6 @@
             <i class="bi bi-check-circle-fill mt-0.5 flex-shrink-0"></i>
             <span>Application submitted! Status: <strong>Under Review</strong>. Redirecting to your dashboard&hellip;</span>
           </div>
-
           <button type="submit" id="apply-submit-btn" class="btn-primary">
             <i class="bi bi-send-fill"></i>
             <span id="apply-btn-text">Submit Application</span>
@@ -522,19 +466,16 @@
           </button>
         </form>
       </div>
-
       <p class="text-center text-sm text-slate-400">
         Already applied? <a href="#" onclick="showViewAndLoad('view-dashboard')" class="text-blue-600 dark:text-blue-400 font-bold hover:underline">View your applications</a>
       </p>
     </div>
   </div>
-
   <!-- ════════════════════════════════════════════════════════════
        VIEW 3 : CANDIDATE DASHBOARD
   ════════════════════════════════════════════════════════════ -->
   <div id="view-dashboard" class="view flex-col pt-28 pb-16 px-4 bg-slate-50 dark:bg-slate-950">
     <div class="max-w-3xl w-full mx-auto fade-up">
-
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
           <p class="section-label mb-1">My Applications</p>
@@ -545,12 +486,10 @@
           <i class="bi bi-plus-lg"></i> Apply for Another Role
         </a>
       </div>
-
       <div id="dash-apps-list" class="space-y-4">
         <div class="h-24 rounded-2xl bg-slate-200 dark:bg-slate-800 animate-pulse"></div>
         <div class="h-24 rounded-2xl bg-slate-200 dark:bg-slate-800 animate-pulse"></div>
       </div>
-
       <div id="dash-empty" class="hidden text-center py-20">
         <div class="w-20 h-20 rounded-3xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-4xl mx-auto mb-5">&#128203;</div>
         <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2">No Applications Yet</h3>
@@ -561,13 +500,11 @@
       </div>
     </div>
   </div>
-
   <!-- ════════════════════════════════════════════════════════════
        VIEW 4 : ADMIN PANEL
   ════════════════════════════════════════════════════════════ -->
   <div id="view-admin" class="view flex-col pt-28 pb-16 px-4 bg-slate-50 dark:bg-slate-950">
     <div class="max-w-7xl w-full mx-auto fade-up">
-
       <!-- Admin Header -->
       <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
         <div class="flex items-center gap-4 flex-1">
@@ -586,7 +523,6 @@
           <i class="bi bi-arrow-clockwise"></i> Refresh
         </button>
       </div>
-
       <!-- Stats Cards -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <div class="glass rounded-2xl p-5 border border-slate-200/60 dark:border-slate-800">
@@ -606,7 +542,6 @@
           <p class="text-3xl font-extrabold text-green-600 dark:text-green-400" id="stat-selected">-</p>
         </div>
       </div>
-
       <!-- Filter Row -->
       <div class="flex items-center gap-2 flex-wrap mb-5">
         <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2">Filter:</span>
@@ -616,10 +551,8 @@
         <button class="filter-chip" data-filter="selected" onclick="filterAdmin('selected',this)">Selected</button>
         <button class="filter-chip" data-filter="rejected" onclick="filterAdmin('rejected',this)">Rejected</button>
       </div>
-
       <!-- Desktop: Table / Mobile: Cards -->
       <div class="glass rounded-3xl shadow-xl shadow-slate-900/5 overflow-hidden">
-
         <!-- Desktop Table -->
         <div class="hidden md:block overflow-x-auto">
           <table class="ws-table">
@@ -642,7 +575,6 @@
             </tbody>
           </table>
         </div>
-
         <!-- Mobile Cards -->
         <div class="md:hidden" id="admin-apps-cards">
           <div class="p-6 text-center">
@@ -650,7 +582,6 @@
             <p class="text-sm text-slate-400 mt-2">Loading&hellip;</p>
           </div>
         </div>
-
         <div id="admin-empty" class="hidden text-center py-16 px-4">
           <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-3xl mx-auto mb-4">&#128194;</div>
           <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-1">No Applications Found</h3>
@@ -659,7 +590,6 @@
       </div>
     </div>
   </div>
-
   <!-- ════════════════════════════════════════════════════════════
        RESUME VIEWER MODAL
   ════════════════════════════════════════════════════════════ -->
@@ -689,14 +619,12 @@
       </div>
     </div>
   </div>
-
   <!-- ════════════════════════════════════════════════════════════
        DYNAMIC DEV CONFIG PANEL (Admin Only)
   ════════════════════════════════════════════════════════════ -->
   <button id="dev-config-toggle" class="hidden fixed bottom-6 right-6 z-40 bg-[#F58A5D] hover:bg-[#eb7d4e] text-white w-12 h-12 rounded-full items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border border-white/20" title="Developer DB Config">
     <i class="bi bi-gear-fill text-lg animate-spin" style="animation-duration: 8s;"></i>
   </button>
-
   <div id="dev-config-panel" class="fixed top-0 right-0 h-full w-96 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 z-[1050] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col p-6 overflow-y-auto">
     <div class="flex justify-between items-center pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
       <h4 class="font-extrabold text-lg text-slate-900 dark:text-white flex items-center gap-2">
@@ -751,7 +679,6 @@
       </div>
     </div>
   </div>
-
   <!-- ════════════════════════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════════════════════════ -->
@@ -760,7 +687,6 @@
     const spinStyle = document.createElement('style');
     spinStyle.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
     document.head.appendChild(spinStyle);
-
     // ── Theme ────────────────────────────────────────────────────────────────
     const htmlEl = document.documentElement;
     function applyTheme(theme) {
@@ -777,7 +703,6 @@
     else if (window.matchMedia('(prefers-color-scheme:dark)').matches) applyTheme('dark');
     else applyTheme('light');
     document.getElementById('theme-toggle-btn').addEventListener('click', toggleTheme);
-
     // Scroll nav
     window.addEventListener('scroll', () => {
       const nc = document.getElementById('nav-container');
@@ -787,13 +712,11 @@
       nc.classList.toggle('backdrop-blur-md', scrolled);
       nc.classList.toggle('bg-white/80', scrolled);
     });
-
     // ── State ────────────────────────────────────────────────────────────────
     let currentUser  = null;
     let selectedRole = null;
     let allAdminApps = [];
     let resumeFile   = null;
-
     // ── View Router ──────────────────────────────────────────────────────────
     function showView(id) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -805,12 +728,10 @@
       if (id === 'view-dashboard') loadDashboard();
       if (id === 'view-admin')     loadAdminApps();
     }
-
     // ── Session ──────────────────────────────────────────────────────────────
     function saveSession(u) { currentUser = u; sessionStorage.setItem('websiity_session', JSON.stringify(u)); }
     function clearSession()  { currentUser = null; sessionStorage.removeItem('websiity_session'); }
     function getSession()    { try { const s = sessionStorage.getItem('websiity_session'); return s ? JSON.parse(s) : null; } catch(e) { return null; } }
-
     // ── Nav user chip ────────────────────────────────────────────────────────
     function setNavUser(user) {
       const chip    = document.getElementById('nav-user-chip');
@@ -829,7 +750,6 @@
       document.getElementById('logout-btn')?.classList.add('hidden');
       document.getElementById('logout-btn')?.classList.remove('flex');
     }
-
     // ── Helpers ──────────────────────────────────────────────────────────────
     function togglePassVis(id, btn) {
       const inp = document.getElementById(id);
@@ -859,7 +779,6 @@
       const [cls, icon] = map[status] || ['badge-review',''];
       return `<span class="badge ${cls}">${icon} ${status}</span>`;
     }
-
     // ── Password strength ────────────────────────────────────────────────────
     function checkPasswordStrength(val) {
       const bar    = document.getElementById('strength-bar');
@@ -887,7 +806,6 @@
       bar.className   = `strength-bar ${lv.color}`;
       label.textContent = lv.text;
       label.className = `text-xs font-bold ${lv.textColor}`;
-
       const hm = { length:'8+ chars', upper:'Uppercase', lower:'Lowercase', digit:'Number', special:'Symbol' };
       hints.innerHTML = Object.entries(checks).map(([k, ok]) =>
         `<li class="inline-flex items-center gap-0.5 ${ok ? 'text-green-600 dark:text-green-400' : 'text-slate-300 dark:text-slate-600'}">
@@ -895,7 +813,6 @@
         </li>`
       ).join('');
     }
-
     // ── Auth tabs ────────────────────────────────────────────────────────────
     function switchTab(tab) {
       document.getElementById('login-form').classList.toggle('hidden', tab !== 'login');
@@ -903,11 +820,10 @@
       document.getElementById('tab-login').classList.toggle('active', tab === 'login');
       document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
       hideEl('login-error'); hideEl('signup-error');
-      const titles = { login: ['Welcome back', 'Sign in to your Websiity account'], signup: ['Join Websiity', 'Create your account to get started'] };
-      document.getElementById('auth-card-title').textContent = titles[tab][0];
-      document.getElementById('auth-card-sub').textContent   = titles[tab][1];
+      // const titles = { login: ['Welcome back', 'Sign in to your Websiity account'], signup: ['Join Websiity', 'Create your account to get started'] };
+      // document.getElementById('auth-card-title').textContent = titles[tab][0];
+      // document.getElementById('auth-card-sub').textContent   = titles[tab][1];
     }
-
     // ── Admin email detection ────────────────────────────────────────────────
     document.getElementById('login-email')?.addEventListener('input', function() {
       const isAdmin = this.value.trim().toLowerCase().startsWith('websiity@gmail.com');
@@ -917,7 +833,6 @@
       const btnText = document.getElementById('login-btn-text');
       const cardT   = document.getElementById('auth-card-title');
       const cardS   = document.getElementById('auth-card-sub');
-
       if (isAdmin) {
         tabs.classList.add('hidden');
         ind.classList.remove('hidden'); ind.classList.add('flex');
@@ -930,20 +845,17 @@
         ind.classList.add('hidden'); ind.classList.remove('flex');
         passLbl.textContent = 'Password';
         btnText.textContent  = 'Sign In';
-        cardT.textContent    = 'Welcome back';
-        cardS.textContent    = 'Sign in to your Websiity account';
+        // cardT.textContent    = 'Welcome back';
+        // cardS.textContent    = 'Sign in to your Websiity account';
       }
     });
-
     // ── LOGIN ────────────────────────────────────────────────────────────────
     document.getElementById('login-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       hideEl('login-error');
       setLoading('login-submit-btn', 'login-spinner', true);
-
       const email    = document.getElementById('login-email').value.trim();
       const password = document.getElementById('login-password').value;
-
       try {
         let user;
         if (email.toLowerCase().startsWith('websiity@gmail.com')) {
@@ -962,23 +874,19 @@
         setLoading('login-submit-btn', 'login-spinner', false);
       }
     });
-
     // ── SIGN UP ──────────────────────────────────────────────────────────────
     document.getElementById('signup-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       hideEl('signup-error');
-
       const name    = document.getElementById('su-name').value.trim();
       const phone   = document.getElementById('su-phone').value.trim();
       const email   = document.getElementById('su-email').value.trim();
       const emailC  = document.getElementById('su-email-confirm').value.trim();
       const password = document.getElementById('su-password').value;
-
       // Email match check
       const mismatch = document.getElementById('su-email-mismatch');
       if (email !== emailC) { mismatch.classList.remove('hidden'); return; }
       mismatch.classList.add('hidden');
-
       // Strength check
       const bar = document.getElementById('strength-bar');
       if (parseInt(bar?.style.width || '0') < 60) {
@@ -988,7 +896,6 @@
         if (msgEl) msgEl.textContent = 'Password is too weak. Add uppercase, numbers, or symbols.';
         return;
       }
-
       setLoading('signup-submit-btn', 'signup-spinner', true);
       try {
         await window.WebsiityDB.registerUser(name, email, phone, password);
@@ -1004,12 +911,10 @@
         setLoading('signup-submit-btn', 'signup-spinner', false);
       }
     });
-
     // ── On Auth Success ──────────────────────────────────────────────────────
     function onAuthSuccess(user) {
       currentUser = user;
       setNavUser(user);
-
       if (user.isAdmin) {
         showView('view-admin');
         loadAdminApps();
@@ -1028,7 +933,6 @@
         }
       }
     }
-
     // ── Resume select ────────────────────────────────────────────────────────
     function handleResumeSelect(input) {
       const file = input.files[0];
@@ -1041,25 +945,21 @@
       const lbl = document.getElementById('resume-label');
       if (lbl) lbl.innerHTML = `<i class="bi bi-check-circle-fill text-green-500"></i> <span class="font-bold text-green-600">${file.name}</span> &mdash; ${(file.size/1024).toFixed(1)} KB`;
     }
-
     // ── Prefill apply form ───────────────────────────────────────────────────
     function prefillApplyForm(user) {
       document.getElementById('app-name').value  = user.name  || '';
       document.getElementById('app-email').value = user.email || '';
       document.getElementById('app-phone').value = user.phone || '';
-
       if (selectedRole) {
         document.getElementById('apply-role-name').textContent = selectedRole.rolename;
         document.getElementById('apply-role-meta').textContent = `${selectedRole.location}  |  ${selectedRole.experience}`;
       }
     }
-
     // ── Application Submit ───────────────────────────────────────────────────
     document.getElementById('apply-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       hideEl('apply-error');
       hideEl('apply-success');
-
       if (!resumeFile) {
         const errEl = document.getElementById('apply-error');
         const msgEl = document.getElementById('apply-error-msg');
@@ -1067,7 +967,6 @@
         if (msgEl) msgEl.textContent = 'Please upload your resume before submitting.';
         return;
       }
-
       const college = document.getElementById('app-college').value.trim();
       const year    = document.getElementById('app-year').value;
       const degree  = document.getElementById('app-degree').value.trim();
@@ -1078,10 +977,8 @@
         if (msgEl) msgEl.textContent = 'Please fill in all fields.';
         return;
       }
-
       setLoading('apply-submit-btn', 'apply-spinner', true);
       document.getElementById('apply-btn-text').textContent = 'Submitting...';
-
       try {
         await window.WebsiityDB.submitApplication({
           rolename:    selectedRole ? selectedRole.rolename : 'General Application',
@@ -1090,7 +987,6 @@
           phone:       currentUser.phone,
           collegeName: college, year, degree
         }, resumeFile);
-
         showEl('apply-success');
         setTimeout(() => {
           selectedRole = null; resumeFile = null;
@@ -1107,7 +1003,6 @@
         document.getElementById('apply-btn-text').textContent = 'Submit Application';
       }
     });
-
     // ── Candidate Dashboard ──────────────────────────────────────────────────
     async function loadDashboard() {
       const list    = document.getElementById('dash-apps-list');
@@ -1116,13 +1011,11 @@
       if (!list) return;
       list.innerHTML = '<div class="h-24 rounded-2xl bg-slate-200 dark:bg-slate-800 animate-pulse"></div><div class="h-24 rounded-2xl bg-slate-200 dark:bg-slate-800 animate-pulse mt-4"></div>';
       emptyEl.classList.add('hidden');
-
       try {
         const apps = await window.WebsiityDB.getApplications(currentUser.email);
         list.innerHTML = '';
         if (!apps.length) { emptyEl.classList.remove('hidden'); if (countEl) countEl.textContent = ''; return; }
         if (countEl) countEl.textContent = `${apps.length} application${apps.length !== 1 ? 's' : ''} submitted`;
-
         apps.forEach(app => {
           const card = document.createElement('div');
           card.className = 'glass rounded-2xl p-5 border border-slate-200/60 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm';
@@ -1145,7 +1038,6 @@
         list.innerHTML = `<p class="text-center py-8 text-red-500 text-sm">${err.message}</p>`;
       }
     }
-
     // ── Admin Panel ──────────────────────────────────────────────────────────
     async function loadAdminApps() {
       const tbody   = document.getElementById('admin-apps-tbody');
@@ -1154,7 +1046,6 @@
       if (tbody) tbody.innerHTML = '<tr><td colspan="7" class="text-center py-10"><div class="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin mx-auto"></div><p class="text-sm text-slate-400 mt-2">Loading&hellip;</p></td></tr>';
       if (cards) cards.innerHTML = '<div class="p-6 text-center"><div class="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin mx-auto"></div></div>';
       if (emptyEl) emptyEl.classList.add('hidden');
-
       try {
         allAdminApps = await window.WebsiityDB.getApplications();
         updateAdminStats(allAdminApps);
@@ -1164,19 +1055,16 @@
         if (cards) cards.innerHTML = `<p class="text-center py-8 text-red-500 text-sm">${err.message}</p>`;
       }
     }
-
     function updateAdminStats(apps) {
       document.getElementById('stat-total').textContent     = apps.length;
       document.getElementById('stat-review').textContent    = apps.filter(a => a.status === 'under review').length;
       document.getElementById('stat-interview').textContent = apps.filter(a => a.status === 'in interview').length;
       document.getElementById('stat-selected').textContent  = apps.filter(a => a.status === 'selected').length;
     }
-
     function renderAdminTable(apps) {
       const tbody   = document.getElementById('admin-apps-tbody');
       const cards   = document.getElementById('admin-apps-cards');
       const emptyEl = document.getElementById('admin-empty');
-
       if (!apps.length) {
         if (tbody) tbody.innerHTML = '';
         if (cards) cards.innerHTML = '';
@@ -1184,7 +1072,6 @@
         return;
       }
       if (emptyEl) emptyEl.classList.add('hidden');
-
       // Desktop table rows
       if (tbody) {
         tbody.innerHTML = '';
@@ -1226,7 +1113,6 @@
           tbody.appendChild(tr);
         });
       }
-
       // Mobile cards
       if (cards) {
         cards.innerHTML = '';
@@ -1263,7 +1149,6 @@
         });
       }
     }
-
     async function updateStatus(appId, newStatus, sel) {
       const prev = sel.getAttribute('data-current');
       sel.disabled = true;
@@ -1281,29 +1166,23 @@
         sel.disabled = false;
       }
     }
-
     function filterAdmin(filter, btn) {
       document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderAdminTable(filter === 'all' ? allAdminApps : allAdminApps.filter(a => (a.status || 'under review') === filter));
     }
-
     // ── Resume Viewer ────────────────────────────────────────────────────────
     function viewResume(appId, fileName, applicantName) {
       const app = allAdminApps.find(a => a.id === appId);
       if (!app?.resumeData) { alert('Resume not available.'); return; }
-
       document.getElementById('resume-modal-title').textContent = `Resume: ${fileName}`;
       document.getElementById('resume-modal-name').textContent  = `Applicant: ${applicantName}`;
-
       const iframe   = document.getElementById('resume-iframe');
       const img      = document.getElementById('resume-img');
       const fallback = document.getElementById('resume-fallback');
       const dlLink   = document.getElementById('resume-download-link');
-
       iframe.classList.add('hidden'); img.classList.add('hidden'); fallback.classList.add('hidden');
       dlLink.href = app.resumeData; dlLink.download = fileName;
-
       const mimeType = app.resumeData.split(';')[0].replace('data:', '');
       if (mimeType === 'application/pdf') {
         iframe.src = app.resumeData; iframe.classList.remove('hidden');
@@ -1312,22 +1191,18 @@
       } else {
         fallback.classList.remove('hidden');
       }
-
       const modal = document.getElementById('resume-modal');
       modal.classList.remove('hidden'); modal.classList.add('flex');
     }
-
     function closeResumeModal() {
       const modal = document.getElementById('resume-modal');
       modal.classList.add('hidden'); modal.classList.remove('flex');
       document.getElementById('resume-iframe').src = '';
     }
-
     // Close modal on backdrop click
     document.getElementById('resume-modal')?.addEventListener('click', function(e) {
       if (e.target === this) closeResumeModal();
     });
-
     // ── LOGOUT ───────────────────────────────────────────────────────────────
     document.getElementById('logout-btn')?.addEventListener('click', () => {
       clearSession(); clearNav(); currentUser = null; selectedRole = null; resumeFile = null;
@@ -1340,11 +1215,10 @@
       document.getElementById('admin-mode-indicator').classList.remove('flex');
       document.getElementById('auth-tabs').classList.remove('hidden');
       document.getElementById('login-btn-text').textContent = 'Sign In';
-      document.getElementById('auth-card-title').textContent = 'Welcome back';
-      document.getElementById('auth-card-sub').textContent = 'Sign in to your Websiity account';
+      // document.getElementById('auth-card-title').textContent = 'Welcome back';
+      // document.getElementById('auth-card-sub').textContent = 'Sign in to your Websiity account';
       showView('view-auth');
     });
-
     // ── INIT ─────────────────────────────────────────────────────────────────
     (function init() {
       // Load role from localStorage
@@ -1372,7 +1246,6 @@
           if (rimm) rimm.textContent = `${selectedRole.location} | ${selectedRole.experience}`;
         }
       } catch(e) {}
-
       // Restore session
       const session = getSession();
       if (session) {
@@ -1393,7 +1266,6 @@
         }
       }
     })();
-    
     // ── DEV CONFIG PANEL ─────────────────────────────────────────────────────
     document.getElementById('dev-config-toggle')?.addEventListener('click', () => {
       document.getElementById('dev-config-panel')?.classList.toggle('translate-x-full');
@@ -1401,7 +1273,6 @@
     document.getElementById('dev-config-close')?.addEventListener('click', () => {
       document.getElementById('dev-config-panel')?.classList.add('translate-x-full');
     });
-    
     async function loadDevConfigPanel() {
       // Badge
       const activeMode = window.WebsiityDB.getMode();
@@ -1415,7 +1286,6 @@
           badge.className = "px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950/30 dark:text-amber-400";
         }
       }
-      
       // Load current configs
       try {
         const config = await window.WebsiityDB.getCourseConfig();
@@ -1425,7 +1295,6 @@
         document.getElementById('dev-course-link').value = config.link || '';
       } catch (err) {}
     }
-    
     document.getElementById('course-config-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       try {
@@ -1439,7 +1308,6 @@
         alert('Error saving: ' + err.message);
       }
     });
-
   </script>
 </body>
 </html>

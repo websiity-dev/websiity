@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +11,6 @@
   <link rel="apple-touch-icon" href="./images/Websiity_logo.png">
   <!-- Theme Color -->
   <meta name="theme-color" content="#fafafa">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,14 +25,11 @@
   <script src="./firebase-config.js"></script>
   <script src="tailwindConfig.js"></script>
 </head>
-
 <body class="font-sans text-slate-900 bg-slate-50 leading-relaxed overflow-x-hidden">
-  
   <!-- NAV -->
   <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
     <div id="nav-container"
       class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-850/50 rounded-full px-6 py-3.5 flex items-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 ease-out origin-center">
-
       <!-- Logo (Left Corner) -->
       <a href="./index.html" class="flex items-center gap-2.5 z-10">
         <img src="./images/Websiity_logo.png" alt="Websiity"
@@ -43,10 +38,8 @@
           Websiity
         </span>
       </a>
-
       <!-- Right Side Navigation & Action items (Desktop Only) -->
       <div class="hidden lg:flex items-center gap-8">
-
         <!-- Nav Links -->
         <div class="flex items-center gap-6">
           <a href="./index.html#about"
@@ -60,7 +53,6 @@
           <a href="./career.html"
             class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-[#F58A5D] dark:hover:text-[#F58A5D] transition-colors duration-300">Career</a>
         </div>
-
         <!-- Action Buttons -->
         <div class="flex items-center gap-4 border-l border-slate-200/80 dark:border-slate-800/80 pl-6">
           <!-- Theme Toggle Button -->
@@ -74,9 +66,7 @@
             Contact Us
           </a>
         </div>
-
       </div>
-
       <!-- Mobile Navigation Actions -->
       <div class="flex lg:hidden items-center gap-4">
         <!-- Theme Toggle Button (Mobile Quick Access) -->
@@ -84,7 +74,6 @@
           class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800/60 flex items-center justify-center text-slate-705 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300">
           <i class="bi bi-sun"></i>
         </button>
-
         <!-- Hamburger Toggle -->
         <button id="mobile-menu-btn"
           class="text-slate-700 dark:text-slate-300 hover:text-orange-500 focus:outline-none z-[1010] p-1.5 rounded-full border border-slate-100 dark:border-slate-800/60 bg-slate-50 dark:bg-slate-900">
@@ -93,15 +82,12 @@
           </svg>
         </button>
       </div>
-
     </div>
   </nav>
-
   <!-- Mobile Sidebar Overlay -->
   <div id="mobile-sidebar"
     class="fixed inset-0 bg-slate-900/50 z-[1005] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
   </div>
-  
   <!-- Mobile Sidebar Menu -->
   <div id="mobile-menu"
     class="fixed top-0 right-0 h-full w-72 bg-white z-[1010] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl flex flex-col pt-20 px-6">
@@ -120,7 +106,6 @@
       class="nav-link relative text-slate-500 font-medium text-[0.95rem] hover:text-blue-500 transition-colors duration-300">Pricing</a>
     <a href="./career.html"
       class="mobile-link block py-4 border-b border-slate-100 text-slate-600 font-medium hover:text-blue-500">Career</a>
-    
     <div class="flex items-center justify-between py-4 border-b border-slate-100 mt-2">
       <span class="text-sm font-semibold text-slate-600" id="theme-label-mobile">Light Mode</span>
       <button id="theme-toggle-btn-mobile" aria-label="Toggle theme"
@@ -132,27 +117,18 @@
       class="mt-6 bg-gradient-to-r from-blue-500 to-cyan-400 text-white w-full py-3 rounded-full font-semibold shadow-[0_4px_15px_rgba(59,130,246,0.3)]">Get
       in Touch</button>
   </div>
-
   <!-- CAREER HERO SECTION -->
   <section class="min-h-screen flex items-center justify-center px-5 sm:px-8 pt-32 pb-16 lg:pt-24 lg:pb-12 bg-gradient-to-br from-slate-50 via-[#fafafc] to-blue-50/20 dark:bg-slate-950 dark:from-slate-950 dark:via-[#0b0f17] dark:to-indigo-950/20 relative overflow-hidden transition-colors duration-500">
-    
     <!-- Mesh Grid Pattern Overlay -->
     <div class="absolute inset-0 grid-pattern pointer-events-none z-0"></div>
-
     <!-- Ambient Glow Blobs (Background) -->
     <div class="absolute top-[10%] left-[5%] w-[350px] h-[350px] bg-gradient-to-br from-blue-300 to-indigo-300 dark:from-blue-600/20 dark:to-indigo-600/25 rounded-full blur-[100px] opacity-40 dark:opacity-50 animate-blob pointer-events-none z-0"></div>
     <div class="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-gradient-to-br from-purple-200 to-pink-200 dark:from-purple-500/15 dark:to-pink-500/15 rounded-full blur-[110px] opacity-30 dark:opacity-40 animate-blob animation-delay-200 pointer-events-none z-0"></div>
-
     <div class="w-full max-w-7xl mx-auto flex flex-col justify-between h-full relative z-10 pt-6">
-      
       <!-- Top Split Hero Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center flex-1">
-        
         <!-- Left Content Column -->
         <div class="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start select-none">
-          
-      
-
           <!-- Main Title -->
           <h1 class="font-sans font-extrabold text-[2.8rem] sm:text-[3.8rem] md:text-[4.5rem] lg:text-[4.8rem] xl:text-[5.4rem] leading-[1.05] tracking-tight text-slate-900 dark:text-white mb-6">
             Work Your Way.
@@ -161,85 +137,31 @@
               Earn Your Way.
             </span>
           </h1>
-
           <!-- Description -->
           <p class="max-w-xl text-slate-500 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-10 px-2 lg:px-0">
             Join a thriving freelancing community. Find exciting projects, work with global clients, and grow your career on your terms.
           </p>
-
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <a href="#" id="courses-btn" target="_blank"
               class="group w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4.5 rounded-full shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-center flex items-center justify-center gap-3 hidden">
               <span id="courses-btn-text">Courses</span>
             </a>
-
             <a href="#" id="hiring-btn"
               class="w-full sm:w-auto bg-transparent border-2 border-blue-600/45 dark:border-blue-400/40 hover:bg-blue-50/30 dark:hover:bg-blue-950/20 text-blue-600 dark:text-blue-400 font-semibold px-8 py-4.5 rounded-full hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-center">
               <span id="hiring-btn-text">Hiring</span>
             </a>
           </div>
-
         </div>
-
         <!-- Right Founders Visual Column -->
         <div class="lg:col-span-5 relative flex items-center justify-center">
-          
           <div class="relative w-full max-w-[430px]">
-            
-            <!-- Floating Decorative: "We're founders" handwritten tag -->
-            <div class="absolute -top-12 right-12 z-20 hidden sm:flex flex-col items-center">
-              <span class="font-['Caveat'] text-2xl font-bold text-blue-600 dark:text-blue-400 rotate-[8deg] select-none">
-                We're founders
-              </span>
-              <!-- Handwritten arrow indicator curve -->
-              <svg class="w-12 h-12 text-blue-600 dark:text-blue-400 mt-1 select-none pointer-events-none transform -rotate-12 translate-x-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M4 4 C10 12 18 10 16 20"></path>
-                <path d="M11 16 L16 20 L20 15"></path>
-              </svg>
-            </div>
-
-            <!-- Floating Decorative: Blue Heart Icon -->
-            <div class="absolute -right-2 top-[35%] z-20 animate-float-delayed">
-              <svg class="w-8 h-8 text-blue-500 dark:text-blue-400 select-none fill-none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-            </div>
-
-            <!-- Main Portrait Wrapper with bottom overlap -->
-            <div class="relative w-full overflow-visible rounded-3xl bg-gradient-to-t from-blue-100/50 to-indigo-100/20 dark:from-indigo-950/20 dark:to-transparent pt-6 px-4">
-              <!-- Glow behind photo -->
-              <div class="absolute inset-0 bg-blue-400/10 dark:bg-indigo-400/5 rounded-3xl blur-xl z-0"></div>
-              
-              <!-- Portrait Image -->
-              <img src="./images/career_founders.png" alt="Websiity Founders" class="relative z-10 w-full h-auto object-cover max-h-[460px] rounded-b-3xl">
-              
-              <!-- Floating Testimonial Overlap Card -->
-              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[92%] sm:w-[96%] glass-card rounded-2xl p-5 shadow-xl border border-slate-200/80 dark:border-slate-800/80 z-20">
-                <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 leading-relaxed mb-2.5">
-                  We built Websiity to make freelancing simple, transparent & empowering for all.
-                </p>
-                <div class="flex items-center justify-between">
-                  <span class="text-[0.68rem] text-slate-400 dark:text-slate-500 font-medium">
-                    – Thank you for being part of our journey!
-                  </span>
-                  <span class="text-sm select-none">💙</span>
-                </div>
-              </div>
-
-            </div>
-
+<img src="./images/Job offers-cuate.svg" alt="image" >
           </div>
-
         </div>
-
       </div>
-
-    
-
     </div>
   </section>
-
   <!-- AVAILABLE ROLES SECTION -->
   <section id="roles-section" class="py-24 px-5 sm:px-8 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-500">
     <div class="max-w-7xl mx-auto">
@@ -249,7 +171,6 @@
         <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">Open Career Opportunities</h3>
         <p class="text-slate-500 dark:text-slate-400 text-lg">Explore our open roles. Find a team and a challenge that matches your skillset.</p>
       </div>
-
       <!-- Roles Grid -->
       <div id="roles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Rendered dynamically by javascript -->
@@ -259,9 +180,6 @@
       </div>
     </div>
   </section>
-
-
-
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-400 px-12 pt-16 pb-8 border-t border-white/10">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -316,7 +234,6 @@
           class="text-slate-400 hover:text-blue-400 transition-colors">Terms of Service</a></p>
     </div>
   </footer>
-
   <script>
     // Scroll Blur Navigation Effect
     const navbar = document.querySelector("nav");
@@ -362,14 +279,12 @@
         );
       }
     });
-
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileSidebar = document.getElementById('mobile-sidebar');
     const mobileLinks = document.querySelectorAll('.mobile-link');
-    
     function toggleMobileMenu() {
       const isOpen = !mobileMenu.classList.contains('translate-x-full');
       if (isOpen) {
@@ -382,18 +297,15 @@
         mobileSidebar.classList.add('opacity-100');
       }
     }
-    
     if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMobileMenu);
     if (mobileSidebar) mobileSidebar.addEventListener('click', toggleMobileMenu);
     mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
-
     // ── Theme Toggle ──
     const htmlEl = document.documentElement;
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
     const themeToggleBtnMobileNav = document.getElementById('theme-toggle-btn-mobile-nav');
-
     function applyTheme(theme) {
       const isDark = theme === 'dark';
       if (isDark) {
@@ -401,20 +313,16 @@
       } else {
         htmlEl.removeAttribute('data-theme');
       }
-
       // Keep all icons synced on the page
       document.querySelectorAll('.bi-sun, .bi-moon-stars-fill').forEach(icon => {
         icon.className = isDark ? 'bi bi-moon-stars-fill' : 'bi bi-sun';
       });
-
       localStorage.setItem('websiity-theme', theme);
     }
-
     function toggleTheme() {
       const current = htmlEl.getAttribute('data-theme');
       applyTheme(current === 'dark' ? 'light' : 'dark');
     }
-
     // Restore saved preference or use OS preference
     const savedTheme = localStorage.getItem('websiity-theme');
     if (savedTheme) {
@@ -424,25 +332,20 @@
     } else {
       applyTheme('light');
     }
-
     if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
     if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
     if (themeToggleBtnMobileNav) themeToggleBtnMobileNav.addEventListener('click', toggleTheme);
-
     // ── Websiity Firebase & Hiring Initializations ──
-    
     // Load button and courses config
     async function initializeCourseConfig() {
       await loadCourseConfig();
     }
-
     async function loadCourseConfig() {
       try {
         const config = await window.WebsiityDB.getCourseConfig();
         const coursesBtn = document.getElementById("courses-btn");
         const coursesText = document.getElementById("courses-btn-text");
         const hiringText = document.getElementById("hiring-btn-text");
-
         if (coursesBtn && coursesText) {
           coursesText.textContent = config.courseText || "Courses";
           coursesBtn.href = config.link || "#";
@@ -455,13 +358,11 @@
         if (hiringText) {
           hiringText.textContent = config.hiringText || "Hiring";
         }
-
         // Also update Developer Config panel values
         const devCourseShow = document.getElementById("dev-course-show");
         const devCourseText = document.getElementById("dev-course-text");
         const devHiringText = document.getElementById("dev-hiring-text");
         const devCourseLink = document.getElementById("dev-course-link");
-        
         if (devCourseShow) devCourseShow.checked = !!config.show;
         if (devCourseText) devCourseText.value = config.courseText || "";
         if (devHiringText) devHiringText.value = config.hiringText || "";
@@ -470,7 +371,6 @@
         console.error("Failed to load course config:", e);
       }
     }
-
     // Smooth scrolling to roles
     const hiringBtn = document.getElementById("hiring-btn");
     if (hiringBtn) {
@@ -482,7 +382,6 @@
         }
       });
     }
-
     // Fetch and Render Job Openings
     async function loadRoles() {
       const grid = document.getElementById("roles-grid");
@@ -491,13 +390,11 @@
         const response = await fetch("./roles.json");
         if (!response.ok) throw new Error("Failed to fetch roles.json");
         const roles = await response.json();
-
         grid.innerHTML = "";
         if (roles.length === 0) {
           grid.innerHTML = `<p class="col-span-full text-center py-8 text-slate-500">No open positions at this time.</p>`;
           return;
         }
-
         roles.forEach(role => {
           const card = document.createElement("div");
           card.className = "glass-card p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between";
@@ -523,17 +420,14 @@
         grid.innerHTML = `<p class="col-span-full text-center py-8 text-red-500">Failed to load careers list. Make sure roles.json is present.</p>`;
       }
     }
-
     window.applyForRole = function(encodedRole) {
       const roleData = JSON.parse(decodeURIComponent(encodedRole));
       localStorage.setItem("websiity_selected_role", JSON.stringify(roleData));
       window.location.href = "./apply.html";
     };
-
     // Kickoff loads
     initializeCourseConfig();
     loadRoles();
   </script>
 </body>
-
 </html> 
