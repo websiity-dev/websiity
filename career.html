@@ -402,7 +402,25 @@
             <div>
               <div class="flex justify-between items-start mb-4">
                 <h4 class="text-xl font-bold text-slate-900 dark:text-white">${role.rolename}</h4>
-                <span class="bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 text-xs font-semibold px-3 py-1 rounded-full">${role.location}</span>
+                <span class="
+  inline-flex
+  items-center
+  justify-center
+  bg-blue-100
+  dark:bg-blue-900/40
+  text-blue-600
+  dark:text-blue-400
+  text-[10px] sm:text-xs
+  font-semibold
+  px-2 sm:px-3
+  py-1
+  rounded-full
+  whitespace-nowrap
+  w-fit
+  max-w-full
+">
+  ${role.location}
+</span>
               </div>
               <p class="text-sm font-medium text-slate-400 dark:text-slate-500 mb-4 flex items-center gap-1.5">
                 <i class="bi bi-briefcase"></i> Experience: ${role.experience}
@@ -410,7 +428,7 @@
               <p class="text-slate-500 dark:text-slate-400 text-[0.95rem] leading-relaxed mb-6">${role.description}</p>
             </div>
             <button onclick="applyForRole('${encodeURIComponent(JSON.stringify(role))}')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full text-sm transition-all duration-300 w-full text-center flex items-center justify-center gap-2 group">
-              Apply Now <i class="bi bi-arrow-right transition-transform group-hover:translate-x-1"></i>
+              Apply Now <i class="bi bi-arrow-right transition-transform  group-hover:translate-x-1"></i>
             </button>
           `;
           grid.appendChild(card);
