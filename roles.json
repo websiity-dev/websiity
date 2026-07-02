@@ -1,26 +1,20 @@
 [
   {
-    "rolename": "Full Stack Developer (JS / Node)",
-    "experience": "0-1 Years",
-    "description": "Design and build state-of-the-art web applications. Work on core product architecture, design APIs, and implement responsive user experiences.",
+    "rolename": "Web Development Intern",
+    "experience": "0 Years (Freshers)",
+    "description": "Basic knowledge of HTML, CSS, JavaScript, React, Git, and responsive web design. Willingness to learn modern web technologies and work collaboratively on real-world projects.",
     "location": "Remote (India)"
   },
   {
-    "rolename": "UI/UX Designer",
-    "experience": "1-3 Years",
-    "description": "Create modern, aesthetic user journeys, wireframes, and high-fidelity mockups. Champion glassmorphic and elegant visual styles for our customers.",
-    "location": "Chennai, India"
+    "rolename": "Content Creator Intern (Video & Content)",
+    "experience": "0 Years (Freshers)",
+    "description": "Basic knowledge of video editing (Premiere Pro, CapCut, DaVinci Resolve, or similar), content writing, social media content creation, and AI tools like ChatGPT. Creative mindset and good communication skills are a plus.",
+    "location": "Remote (India)"
   },
   {
-    "rolename": "AI Integration Engineer",
-    "experience": "1+ Year / Freshers welcome",
-    "description": "Connect advanced LLM APIs, set up vector databases, build custom agentic pipelines, and optimize runtime performance for AI-assisted tools.",
-    "location": "Remote"
-  },
-  {
-    "rolename": "Growth Marketing Manager",
-    "experience": "3+ Years",
-    "description": "Lead user acquisition strategy, manage social platforms, drive SEO campaigns, perform analytics tracking, and scale our brand reach globally.",
-    "location": "Hybrid (Chennai)"
+    "rolename": "Marketing Intern & Lead Generation Intern",
+    "experience": "0 Years (Freshers)",
+    "description": "Basic knowledge of digital marketing & lead generation, social media platforms, SEO fundamentals, content promotion, and analytics. Strong communication skills and eagerness to learn marketing strategies.",
+    "location": "Remote (India)"
   }
 ]
