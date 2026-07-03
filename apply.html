@@ -167,7 +167,7 @@
     <div id="nav-container"
       class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/50 rounded-full px-5 py-3 flex items-center justify-between shadow-lg shadow-slate-900/5 transition-all duration-300">
       <a href="./career.html" class="flex items-center gap-2.5">
-        <img src="./images/Websiity_logo.png" alt="Websiity" class="h-9 w-auto rounded-full border border-slate-100 dark:border-slate-800" />
+        <img src="./images/Websiity_logo.jpeg" alt="Websiity" class="h-10 w-10 rounded-full" />
         <!-- <span class="font-extrabold text-base text-slate-900 dark:text-white tracking-tight hidden sm:block">Websiity</span> -->
       </a>
       <div class="flex items-center gap-3">
@@ -203,19 +203,74 @@
         <!-- LEFT: Branding panel (desktop only) -->
         <div class="hidden lg:flex flex-col justify-between flex-1 py-8">
           <div>
-            <!-- Role info (shown when a role is selected) -->
-            <div id="role-info-panel" class="hidden mb-8 glass rounded-3xl p-6 border-l-4 border-blue-500">
-              <p class="section-label mb-2">You are applying for</p>
-              <h2 id="role-info-name" class="text-xl font-extrabold text-slate-900 dark:text-white leading-tight mb-2"></h2>
-              <div class="flex flex-wrap gap-3 mt-3">
-                <span id="role-info-loc" class="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
-                  <i class="bi bi-geo-alt"></i>
-                </span>
-                <span id="role-info-exp" class="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
-                  <i class="bi bi-briefcase"></i>
-                </span>
-              </div>
-            </div>
+         <!-- Role Information -->
+<div id="role-info-panel"
+    class="hidden relative overflow-hidden rounded-[32px] border border-slate-200/60 dark:border-slate-700/50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.08)] p-8 lg:p-10">
+
+    <!-- Decorative dots -->
+    <div class="absolute top-8 right-8 grid grid-cols-4 gap-2 opacity-20">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+    </div>
+
+    <!-- Badge -->
+    <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20">
+
+        <i class="bi bi-briefcase text-blue-600"></i>
+
+        <span class="text-sm font-semibold text-blue-600">
+            You are applying for
+        </span>
+
+    </div>
+
+    <!-- Title -->
+    <h2 id="role-info-name"
+        class="mt-6 text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+    </h2>
+
+    <!-- Divider -->
+    <div class="mt-5 w-20 h-1 rounded-full bg-gradient-to-r from-blue-600 to-sky-400"></div>
+
+    <!-- Description -->
+    <p id="role-info-desc" class="description mt-6 max-w-xl text-slate-500 dark:text-slate-400 text-lg leading-8">
+        Kickstart your career by working on real-world projects and building
+        impactful software with our engineering team.
+    </p>
+
+    <!-- Pills -->
+    <div class="flex flex-wrap gap-4 mt-8">
+
+        <span id="role-info-loc"
+            class="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 px-5 py-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
+
+            <i class="bi bi-geo-alt text-blue-600"></i>
+
+        </span>
+
+        <span id="role-info-exp"
+            class="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 px-5 py-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
+
+            <i class="bi bi-mortarboard text-blue-600"></i>
+
+        </span>
+
+    </div>
+
+</div>
             <!-- No role selected message -->
             <div id="no-role-panel">
               <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
@@ -230,7 +285,14 @@
         </div>
         <!-- RIGHT: Auth Card -->
         <div class="w-full lg:w-[440px] flex-shrink-0">
+          
           <div class="glass rounded-3xl shadow-2xl shadow-slate-900/10 overflow-hidden">
+               <!-- Mobile: role info -->
+          <div id="role-info-mobile" class="hidden mt-4 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl rounded-3xl p-5 shadow-sm lg:hidden">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1.5">Applying for</p>
+            <p id="role-info-mobile-name" class="font-extrabold text-slate-900 dark:text-white text-lg leading-tight"></p>
+            <p id="role-info-mobile-meta" class="text-sm text-slate-500 dark:text-slate-400 mt-1"></p>
+          </div>
             <!-- Card Header -->
             <!-- <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 pt-8 pb-6">
               <div class="flex items-center justify-between mb-4">
@@ -276,6 +338,7 @@
                   <i id="login-spinner" class="bi bi-arrow-clockwise hidden" style="animation:spin 0.7s linear infinite;"></i>
                 </button>
               </form>
+              
               <!-- ── SIGNUP FORM ── -->
               <form id="signup-form" class="space-y-4 hidden" autocomplete="on">
                 <div class="grid grid-cols-2 gap-3">
@@ -341,12 +404,7 @@
               </form>
             </div><!-- /px-8 -->
           </div><!-- /glass card -->
-          <!-- Mobile: role info -->
-          <div id="role-info-mobile" class="hidden mt-4 glass rounded-2xl p-4 border-l-4 border-blue-500 lg:hidden">
-            <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Applying for</p>
-            <p id="role-info-mobile-name" class="font-extrabold text-slate-900 dark:text-white text-base"></p>
-            <p id="role-info-mobile-meta" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"></p>
-          </div>
+       
         </div>
       </div>
     </div>
@@ -955,6 +1013,20 @@
         document.getElementById('apply-role-meta').textContent = `${selectedRole.location}  |  ${selectedRole.experience}`;
       }
     }
+    // ── Toast Notification ───────────────────────────────────────────────────
+    function showToast(message) {
+      let toast = document.getElementById('custom-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'custom-toast';
+        toast.className = 'fixed bottom-4 right-4 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-xl transition-all transform translate-y-20 opacity-0 z-50';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
+    }
+
     // ── Application Submit ───────────────────────────────────────────────────
     document.getElementById('apply-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -980,14 +1052,46 @@
       setLoading('apply-submit-btn', 'apply-spinner', true);
       document.getElementById('apply-btn-text').textContent = 'Submitting...';
       try {
+        const rolename = selectedRole ? selectedRole.rolename : 'General Application';
+        const appName = document.getElementById('app-name').value.trim();
+        const appEmail = document.getElementById('app-email').value.trim().toLowerCase();
+        const appPhone = document.getElementById('app-phone').value.trim();
+        
+        // 1. Check for existing application by email or phone
+        const existingApps = await window.WebsiityDB.getApplications();
+        const existingApp = existingApps.find(a => 
+          (a.email.toLowerCase() === (appEmail || currentUser.email.toLowerCase()) || 
+          (a.phone && a.phone === (appPhone || currentUser.phone))) && 
+          a.rolename === rolename
+        );
+        
+        if (existingApp) {
+          showToast(`Already submitted! Your Job ID is: ${existingApp.id}`);
+          setLoading('apply-submit-btn', 'apply-spinner', false);
+          document.getElementById('apply-btn-text').textContent = 'Submit Application';
+          return;
+        }
+
+        // 2. Submit application
         await window.WebsiityDB.submitApplication({
-          rolename:    selectedRole ? selectedRole.rolename : 'General Application',
-          name:        currentUser.name,
-          email:       currentUser.email,
-          phone:       currentUser.phone,
+          rolename:    rolename,
+          name:        appName || currentUser.name,
+          email:       appEmail || currentUser.email,
+          phone:       appPhone || currentUser.phone,
           collegeName: college, year, degree
         }, resumeFile);
+        
         showEl('apply-success');
+        
+        // 3. Send confirmation email (Mock/EmailJS template)
+        // If you configure EmailJS, uncomment and use:
+        // emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        //   to_email: currentUser.email,
+        //   to_name: currentUser.name,
+        //   message: "Thanks for interesting and soon our team will review and reach out to you."
+        // });
+        setTimeout(() => showToast("Email sent: Thanks for interesting and soon our team will review and reach out to you."), 500);
+
         setTimeout(() => {
           selectedRole = null; resumeFile = null;
           localStorage.removeItem('websiity_selected_role');
@@ -1210,6 +1314,7 @@
       document.getElementById('dev-config-toggle')?.classList.remove('flex');
       document.getElementById('dev-config-panel')?.classList.add('translate-x-full');
       switchTab('login');
+      
       document.getElementById('login-form').reset();
       document.getElementById('admin-mode-indicator').classList.add('hidden');
       document.getElementById('admin-mode-indicator').classList.remove('flex');
@@ -1232,11 +1337,13 @@
           const rin = document.getElementById('role-info-name');
           const ril = document.getElementById('role-info-loc');
           const rie = document.getElementById('role-info-exp');
+          const rid = document.getElementById('role-info-desc');
           if (rip) rip.classList.remove('hidden');
           if (nrp) nrp.classList.add('hidden');
           if (rin) rin.textContent = selectedRole.rolename;
-          if (ril) ril.innerHTML = `<i class="bi bi-geo-alt"></i> ${selectedRole.location}`;
-          if (rie) rie.innerHTML = `<i class="bi bi-briefcase"></i> ${selectedRole.experience}`;
+          if (ril) ril.innerHTML = `<i class="bi bi-geo-alt text-blue-600"></i> ${selectedRole.location}`;
+          if (rie) rie.innerHTML = `<i class="bi bi-mortarboard text-blue-600"></i> ${selectedRole.experience}`;
+          if (rid && selectedRole.description) rid.textContent = selectedRole.description;
           // Mobile panel
           const rim = document.getElementById('role-info-mobile');
           const rimn = document.getElementById('role-info-mobile-name');
