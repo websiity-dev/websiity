@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://websiity.netlify.app/sitemap.xml
